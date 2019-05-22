@@ -1,0 +1,274 @@
+$(document).ready(pagination(1));
+
+$(function(){ 
+
+	$('#bd-desde').on('change', function(){
+
+		var desde = $('#bd-desde').val();
+
+		var hasta = $('#bd-hasta').val();
+
+		var url = 'busca_provedor_fecha.php';
+
+		$.ajax({
+
+		type:'POST',
+
+		url:url,
+
+		data:'desde='+desde+'&hasta='+hasta,
+
+		success: function(datos){
+
+			$('#agrega-registros').html(datos);
+
+		}
+
+	});
+
+	return false;
+
+	});
+
+	
+
+	$('#bd-hasta').on('change', function(){
+
+		var desde = $('#bd-desde').val();
+
+		var hasta = $('#bd-hasta').val();
+
+		var url = 'busca_provedor_fecha.php';
+
+		$.ajax({
+
+		type:'POST',
+
+		url:url,
+
+		data:'desde='+desde+'&hasta='+hasta,
+
+		success: function(datos){
+
+			$('#agrega-registros').html(datos);
+
+		}
+
+	});
+
+	return false;
+
+	});
+
+	
+
+	$('#nuevo-provedor').on('click',function(){
+
+		$('#formulario')[0].reset();
+
+		$('#pro').val('Registro');
+
+		$('#edi').hide();
+
+		$('#reg').show();
+
+		$('#registra-provedor').modal({
+
+			show:true,
+
+			backdrop:'static'
+
+		});
+
+	});
+
+
+});
+
+
+
+function agregaRegistroProvedor(){
+
+	var url = 'agrega_provedor.php';
+
+	$.ajax({
+
+		type:'POST',
+
+		url:url,
+
+		data:$('#formulario').serialize(),
+
+		success: function(registro){
+
+			if ($('#pro').val() == 'Registro'){
+
+			$('#formulario')[0].reset();
+
+			$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
+
+			$('#agrega-registros').html(registro);
+
+			return false;
+
+			}else{
+
+			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
+
+			$('#agrega-registros').html(registro);
+
+			return false;
+
+			}
+
+		}
+
+	});
+
+	return false;
+
+}
+
+
+
+function eliminarProvedor(id){
+
+	var url = 'elimina_provedor.php';
+
+	var pregunta = confirm('¿Esta seguro de eliminar este Provedor?');
+
+	if(pregunta==true){
+
+		$.ajax({
+
+		type:'POST',
+
+		url:url,
+
+		data:'id='+id,
+
+		success: function(registro){
+
+			$('#agrega-registros').html(registro);
+
+			return false;
+
+		}
+
+	});
+
+	return false;
+
+	}else{
+
+		return false;
+
+	}
+
+}
+
+
+
+function editarProvedor(id){
+
+	$('#formulario')[0].reset();
+
+	var url = 'edita_provedor.php';
+
+		$.ajax({
+
+		type:'POST',
+
+		url:url,
+
+		data:'id='+id,
+
+		success: function(valores){
+
+				var datos = eval(valores);
+
+				$('#reg').hide();
+
+				$('#edi').show();
+
+				$('#pro').val('Edicion');
+
+				$('#id-prod').val(id);
+
+				// $('#nombre').val(datos[0]);
+
+				// $('#telefono').val(datos[1]);
+
+				// $('#correo').val(datos[2]);
+
+				// $('#direccion').val(datos[3]);
+
+				$('#usuario').val(datos[0]);	
+
+				$('#registra-provedor').modal({
+
+					show:true,
+
+					backdrop:'static'
+
+				});
+
+			return false;
+
+		}
+
+	});
+
+	return false;
+
+}
+
+
+
+function reportePDF(){
+
+	var desde = $('#bd-desde').val();
+
+	var hasta = $('#bd-hasta').val();
+
+	window.open('reportesprovedorsq.php?desde='+desde+'&hasta='+hasta);
+
+}
+
+
+
+$(document).ready(function(){
+
+    
+
+    var show = 1;
+
+    
+
+    $('.show').on('click', function(){
+
+        
+
+        if(show == 1){
+
+            $('.content-menu').addClass("content-menu2");
+
+            show = 0;
+
+        }else{
+
+            $('.content-menu').removeClass("content-menu2");
+
+            show = 1;
+
+        }
+
+        
+
+        
+
+    })
+
+    
+
+})

@@ -1,0 +1,740 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+*{  
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    border-radius: 0px;
+}
+/**/
+
+#detalle_venta tr{
+    background-color: #FFF !important;
+}
+#detalle_venta td{
+    border-bottom: 1px solid #CCC;
+}
+.action_cliente{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+}
+
+.datos label{
+    margin: 5px auto;
+}
+.wd20{
+    width: 20%;
+}
+.wd25{
+    width: 25%;
+}
+.wd30{
+    width: 30%;
+}
+.wd40{
+    width: 40%;
+}
+.wd60{
+    width: 60%;
+}
+.wd100{
+    width: 100%;
+}
+#div_registro_cliente, #add_product_venta{
+    display: none;
+}
+.displayN{
+    display: none;
+}
+.tbl_venta{
+    max-width: 900px;
+    margin: auto;
+}
+.tbl_venta tfoot td{
+    font-weight: bold;
+}
+.textright{
+    text-align: right;
+}
+.textcenter{
+    text-align: center;
+}
+.textleft{
+    text-align: left;
+}
+
+/**/
+a > svg > symbol > text {
+    font-size: 130px;
+}
+
+a{
+    display: contents;
+}
+
+.radius{
+    border-radius: 0;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+svg {
+    display: block;
+    font: 10.5em 'Roboto';
+    width: 200px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+    stroke: gray;;
+    animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+    stroke: #384C87;
+    animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+    stroke: #2F8CE9;
+    animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+    stroke: #384C87;
+    animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+    stroke: #43798F;
+    animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+    100% {stroke-dashoffset: -35%;}
+}
+
+.btn{
+    border-radius: 0px;
+}
+
+.thumbnail {
+
+    width: 171px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#preview {
+
+    position: relative;
+}
+
+#preview a {
+
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    display: none;
+}
+
+#file-info {
+
+    text-align: center;
+    display: block;
+}
+
+input[type=file] {
+
+    position: absolute;
+	visibility: hidden;
+	width: 0;
+	z-index: -9999;
+}
+
+.onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #A88C8C; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #050708; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #A88C8C; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.tituloginfondo{
+
+	background-color: #999999;
+}
+
+.loginfondo{
+
+	background-color: #CCC;
+    margin: 0;
+    height: 500px;
+}
+
+main{
+
+    width: 100%;
+    display: flex;
+}
+
+header{
+
+    width: 100%;
+    height: 30px;
+    background: #384C87;
+}
+
+header span{
+
+    font-size: 30px;
+    padding-left: 10px;
+    color: white;
+    transition: all 300ms;
+    cursor: pointer;
+    position: relative;
+}
+
+header span:hover{
+
+    padding-left: 10px;
+    border-radius: 10px;
+    color: #000;
+}
+
+.nav>li>a {
+    padding: 8px 15px;
+}
+
+.content-menu{
+
+    border-style: solid ;
+    border-color: #384C87;
+    border-width:1px;
+    height: 800px;
+
+}
+
+.content-menu2{
+
+    margin-left: -138px;
+}
+
+.content-menu li{
+
+    list-style: none;
+	padding-top: 0px;
+    color: white;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.content-menu li:hover{
+
+    transform: translateY(0px);
+    background: rgba(0,0,0,0.5);
+}
+
+.content-menu li span{
+    
+    font-size: 25px;
+}
+
+.content-menu li h4{
+
+    font-weight: 300;
+    transform: translateY(18px) translateX(-110px);
+    transition: all 300ms;
+}
+
+.content-menu  a{
+
+    text-decoration: none;  
+}
+
+.icon{
+    font-size: 15px;
+}
+
+.icon1{
+
+    color: #BA7404;
+}
+
+.icon2{
+
+    color: #1BBFB2;
+}
+
+.icon3{
+
+    color: #df2626;
+}
+
+
+.icon4{
+
+    color: #760B0B;
+}
+
+
+.icon5{
+
+    color: #FAB000;
+}
+
+
+.icon6{
+
+    color: #6A26DF;
+}
+
+
+.icon7{
+
+    color: #384C87;
+}
+
+.icon8{
+
+    color: black;
+}
+
+.icon9{
+
+    color: #fff;
+}
+
+.icon10{
+
+    color: #78C800;
+}
+
+article{
+
+    padding: 20px;
+}
+
+
+article h1{
+
+    font-size: 50px;
+    text-align: center;
+}
+
+article p{
+
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.panel-info>.panel-heading {
+
+    color: #000;
+}
+
+.panel-body{
+
+	padding:0px;
+}
+
+.pull-right{
+
+	padding: 0px;
+}	
+
+.panel-success>.panel-heading {
+
+	background: white;
+    border-color: white;
+    height: 34px;
+    padding: 0px;
+}  
+
+.contenedor-section{
+
+	height:510px;
+	padding: 0;
+	overflow: scroll;
+	display: inline-block;
+	font-family: 'Roboto', sans-serif;
+	line-height: 18px;
+}
+
+.breadcrumb{
+
+	margin-bottom: 0px;
+}
+
+ol{
+
+	margin-bottom: 0px;
+}
+
+.panel{
+
+	border-radius: 0px;
+	height: 34px;
+	border:0px;
+}
+
+#eliminarnegro{
+
+	color: black;
+}  
+
+#header1{
+
+	height: 35px;
+	background-color: white;
+}
+
+#usu{ 
+
+	color: goldenrod;
+	font-size: 15px;
+}
+
+button.close{
+
+	margin: 10px;
+}
+
+.btn-warning {
+
+    color: #fff;
+    background-color: #E07416;
+    border-color: #E07416;
+    font-size: 1.5em;
+    float: left;
+}
+
+p{
+
+	color: #78C800 ;
+}
+
+.floatright{
+
+	float: right;
+	font-size: 1.5em;
+	color: #54194d;
+}
+
+h3{
+
+	color: #333;
+	font-family: "Sylfaen";
+	font-size: 2rem;
+}
+
+h1, h2{
+
+	text-align: center;
+}
+
+
+h4{
+
+	font-size: 13px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#footer1{
+
+	width: 100%;
+	margin-top: 0px;
+	background-color:#384C87; 
+}	
+
+.btn-menu {
+
+	display: none;	
+	padding: 20px;
+	background: #424242;
+	color: white;
+}
+
+.btn{
+
+	border-radius: 0px;
+}
+
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+
+    background-color: #8a858a;
+    border-color: #8a858a;
+}
+
+.pagination{
+/*    display: block;*/
+	margin: 0px;
+}
+
+
+.btn-menu .icon{
+
+	float: right;
+}
+
+.table td, .table th {
+    padding: .3rem;
+    vertical-align: unset;
+}
+.contenedor-menu{
+
+    width: 135px;
+	padding:0;
+	/*background: #424242;	*/
+	display: inline-block;
+    font-size: 13px;
+	line-height: 18px;
+}
+
+/*
+.contenedor-menu .menu{
+    width: 100%;
+}*/
+
+.contenedor-menu ul {
+    list-style: none;
+}
+
+a:focus, a:hover {
+    color: gray;
+    text-decoration:    none;
+}
+
+.contenedor-menu .menu li a{
+    color: #424242;
+    display: block;
+    padding: 15px 10px;
+    background: white;
+|   font-family:  'Roboto', serif;
+    font-weight: bold;
+}
+
+.contenedor-menu .menu li a:hover{
+    background: #c5c5c5;
+    color: #211c2f;
+    /*border-left: solid gray;*/
+}
+
+.contenedor-menu .menu .icon{
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.contenedor-menu .menu .icon.izquierda{
+    float: left;
+    margin-right: 10px;
+}
+
+.contenedor-menu .menu .icon.derecha{
+    float: right;
+    margin-left:  10px;
+}
+
+.contenedor-menu .menu ul{
+    display: none;
+}
+
+.contenedor-menu .menu ul li a{
+    background: #efe9e9;
+    color: #211c2f;
+}
+
+.contenedor-menu .menu .activado > a{
+    background: #efe9e9;
+    color: #424242;
+}
+
+.contenedor-section{
+
+	height:510px;
+	padding: 0;
+	overflow: scroll;
+	display: inline;
+	font-family: 'Roboto', sans-serif;
+	line-height: 18px;
+}
+
+.contenedor-section1{
+
+	overflow: hidden;
+	width: 83%;
+    height:550px;
+	padding: 0;
+}
+
+.iconreportes{
+
+	font-size: 60px;
+}
+
+section table tr td input{
+
+	width:90%;
+	height:35px;
+	outline:none;
+	font-size:14px;
+}
+
+.registros{
+
+	margin:auto;
+	width:100%;
+	margin-top:0px;
+	/*border:1px solid #6F96DF;*/
+	height:auto;
+	padding-left:0px;
+    padding-right:0px;
+}
+
+.formulario table tr td{
+
+	padding:10px;
+}
+
+.formulario table tr td input{
+
+	width:100%;
+    outline:none;
+}
+
+.formulario table tr td select{
+
+	width:100%;
+	height:30px;
+	outline:none;
+}
+
+.bien{
+
+	background-color:#3CBE34;
+	text-align:center;
+	font-size:14px;
+	color:#FFF;
+	padding:5px;
+}
+
+
+
+@media screen and (max-width: 768px){
+
+	.contenedor-section0{
+    	padding: 0;
+}
+
+    .content-menu{
+        height: 850px;
+    }
+}
+
+@media (min-width: 768px){
+
+	.container {
+    width: 100%;
+}
+
+    #footer1{
+	height: 100px;
+}
+
+	.smenu{
+	height:600px;
+}
+
+	.contenedor-section0{
+	height:580px;
+	padding: 0;
+}
+}
