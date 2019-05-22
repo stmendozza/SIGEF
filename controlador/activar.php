@@ -19,7 +19,7 @@
 </head>
 <body>
 <?php include('../vista/inc/headerlog.php'); ?>
-<header><h6 style="color:white; float:left; padding: 7px;">Activacion de Cuenta</h6></header>  
+<header><h6 style="color:white; float:left; padding: 7px;">Activacion de cucuuenta</h6></header>  
 <br><br><br> 
 	<div class="container">
 		<div class="row jumbotron">
