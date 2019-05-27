@@ -10,21 +10,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'desde='+desde+'&hasta='+hasta,
+			data:'desde='+desde+'&hasta='+hasta,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros-tipo').html(datos);
+				$('#agrega-registros-tipo').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}); 
 
@@ -40,21 +40,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'desde='+desde+'&hasta='+hasta,
+			data:'desde='+desde+'&hasta='+hasta,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros-tipo').html(datos);
+				$('#agrega-registros-tipo').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	});
 
@@ -90,21 +90,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'dato='+dato,
+			data:'dato='+dato,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros-tipo').html(datos);
+				$('#agrega-registros-tipo').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	});
 
@@ -130,25 +130,25 @@ function agregaRegistroTipo(){
 
 			if ($('#pro').val() == 'Registro'){
 
-			$('#formulario')[0].reset();
+				$('#formulario')[0].reset();
 
-			$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros-tipo').html(registro);
+				$('#agrega-registros-tipo').html(registro);
 
-			window.location.href = "../controlador/tipos.php";
+				window.location.href = "../controlador/tipos.php";
 
-			return false;
+				return false;
 
 			}else{
 
-			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros-tipo').html(registro);
+				$('#agrega-registros-tipo').html(registro);
 
-			window.location.href = "../controlador/tipos.php";
+				window.location.href = "../controlador/tipos.php";
 
-			return false;
+				return false;
 
 			}
 
@@ -159,7 +159,7 @@ function agregaRegistroTipo(){
 	return false;
 
 }
- 
+
 
 
 function eliminarTipo(id){
@@ -172,23 +172,23 @@ function eliminarTipo(id){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'id='+id,
+			data:'id='+id,
 
-		success: function(registro){
+			success: function(registro){
 
-			$('#agrega-registros-tipo').html(registro);
+				$('#agrega-registros-tipo').html(registro);
 
-			return false;
+				return false;
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}else{
 
@@ -206,7 +206,7 @@ function editarTipo(id){
 
 	var url = 'edita_tipo.php';
 
-		$.ajax({
+	$.ajax({
 
 		type:'POST',
 
@@ -216,25 +216,25 @@ function editarTipo(id){
 
 		success: function(valores){
 
-				var datos = eval(valores);
+			var datos = eval(valores);
 
-				$('#reg').hide();
+			$('#reg').hide();
 
-				$('#edi').show();
+			$('#edi').show();
 
-				$('#pro').val('Edicion');
+			$('#pro').val('Edicion');
 
-				$('#id-prod').val(id);
+			$('#id-prod').val(id);
 
-				$('#nom_tipo').val(datos[0]);
+			$('#nom_tipo').val(datos[0]);
 
-				$('#registra-tipo').modal({
+			$('#registra-tipo').modal({
 
-					show:true,
+				show:true,
 
-					backdrop:'static'
+				backdrop:'static'
 
-				});
+			});
 
 			return false;
 
@@ -263,36 +263,36 @@ function reportePDF(){
 
 $(document).ready(function(){
 
-    
+	
 
-    var show = 1;
+	var show = 1;
 
-    
+	
 
-    $('.show').on('click', function(){
+	$('.show').on('click', function(){
 
-        
+		
 
-        if(show == 1){
+		if(show == 1){
 
-            $('.content-menu').addClass("content-menu2");
+			$('.content-menu').addClass("content-menu2");
 
-            show = 0;
+			show = 0;
 
-        }else{
+		}else{
 
-            $('.content-menu').removeClass("content-menu2");
+			$('.content-menu').removeClass("content-menu2");
 
-            show = 1;
+			show = 1;
 
-        }
+		}
 
-        
+		
 
-        
+		
 
-    })
+	})
 
-    
+	
 
 })

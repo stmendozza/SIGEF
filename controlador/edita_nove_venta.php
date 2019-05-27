@@ -22,17 +22,17 @@ $valores2 = mysqli_fetch_array($resultado);
 
 $datos = array(
 
-				0 => $valores2['nombre'], 
+	0 => $valores2['nombre'], 
 
-				1 => $valores2['telefono'], 
+	1 => $valores2['telefono'], 
 
-				2 => $valores2['correo'],
+	2 => $valores2['correo'],
 
-				3 => $valores2['direccion'],
+	3 => $valores2['direccion'],
 
-				4 => $valores2['usuario'],
+	4 => $valores2['usuario'],
 
-				);
+);
 
 echo json_encode($datos);
 

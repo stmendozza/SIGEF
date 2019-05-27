@@ -28,9 +28,9 @@ if(isset($hasta)==false){
 
 function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+	return $nfecha;
 
 }
 
@@ -51,21 +51,21 @@ $resultado=mysqli_query($conexion,$registro);
 
 echo '<table class="table table-striped table-condensed table-hover">
 
-        	<tr>
+<tr>
 
-            	<th width="50">Codigo</th>
+<th width="50">Codigo</th>
 
-                <th width="300">Descripcion</th>
+<th width="300">Descripcion</th>
 
-               
 
-                <th width="150">Precio Distribuidor</th>
 
-                <th width="150">Fecha Registro</th>
+<th width="150">Precio Distribuidor</th>
 
-                <th width="50">Opciones</th>
+<th width="150">Fecha Registro</th>
 
-            </tr>';
+<th width="50">Opciones</th>
+
+</tr>';
 
 
 
@@ -75,17 +75,17 @@ if(!empty($resultado)){
 
 		echo '<tr>
 
-				<td>'.$array['cod_prod'].'</td>
+		<td>'.$array['cod_prod'].'</td>
 
-				<td>'.$array['descripcion'].'</td>
+		<td>'.$array['descripcion'].'</td>
 
-				<td>S/. '.$array['precio_costo'].'</td>
+		<td>S/. '.$array['precio_costo'].'</td>
 
-				<td>'.fechaNormal($array['fecha_registro_prod']).'</td>
+		<td>'.fechaNormal($array['fecha_registro_prod']).'</td>
 
-				<td><a href="javascript:editarProducto('.$array['cod_prod'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarProducto('.$array['cod_prod'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
+		<td><a href="javascript:editarProducto('.$array['cod_prod'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarProducto('.$array['cod_prod'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
 
-				</tr>';
+		</tr>';
 
 	}
 
@@ -93,9 +93,9 @@ if(!empty($resultado)){
 
 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+	<td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+	</tr>';
 
 }
 

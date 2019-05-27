@@ -2,11 +2,11 @@
 
 include('../connections/config.php');
 
-  function fechaNormal($fecha){
+function fechaNormal($fecha){
 
-    $nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-    return $nfecha;
+	return $nfecha;
 
 }
 
@@ -25,9 +25,9 @@ switch($proceso){
 
 	case 'Registro':
 
-		$registro = ("INSERT INTO tb_roles(nom_rol, responsabilidades)VALUES('$nombre', '$responsabilidades')");
+	$registro = ("INSERT INTO tb_roles(nom_rol, responsabilidades)VALUES('$nombre', '$responsabilidades')");
 
-		$resultado = mysqli_query($conexion, $registro);
+	$resultado = mysqli_query($conexion, $registro);
 
 	break;
 
@@ -35,9 +35,9 @@ switch($proceso){
 
 	case 'Edicion':
 
-		$edicion = ("UPDATE tb_roles SET nom_rol = '$nombre', responsabilidades = '$responsabilidades'  WHERE cod_rol = '$id'");
+	$edicion = ("UPDATE tb_roles SET nom_rol = '$nombre', responsabilidades = '$responsabilidades'  WHERE cod_rol = '$id'");
 
-		$resultado = mysqli_query($conexion, $edicion);
+	$resultado = mysqli_query($conexion, $edicion);
 
 	break;
 
@@ -45,7 +45,7 @@ switch($proceso){
 
 
 
- 
+
 
 
 // //ACTUALIZAMOS LOS REGISTROS Y LOS OBTENEMOS
@@ -63,7 +63,7 @@ switch($proceso){
 //                       <th width="10">Opciones</th>
 //                   </tr>
 //               </thead>';
- 
+
 //   if(!empty($resultado)){   
 
 //   while($registro2 = mysqli_fetch_array($resultado)){

@@ -2,119 +2,119 @@
 
 
 
-	/*manejando sesiones siempre va de primero el session para no mostrar el sitio si no hay un usuario conectado*/ 
+/*manejando sesiones siempre va de primero el session para no mostrar el sitio si no hay un usuario conectado*/ 
 
-	session_start();
+session_start();
 
-	require '../connections/config.php';
+require '../connections/config.php';
 
-	require '../controlador/funciones.php';	
+require '../controlador/funciones.php';	
 
 
 
 	// si el usuario esta conectado muestra el sitio de chat si no lo redirige al index para que se logee o se registre
 
-	if (isset($_SESSION['usuario']))
+if (isset($_SESSION['usuario']))
 
-	{			 
+{			 
 
 
 
 	
 
-		$actualpass= $conexion->real_escape_string($_POST['actualpass']);
+	$actualpass= $conexion->real_escape_string($_POST['actualpass']);
 
-		$nuevapass= $conexion->real_escape_string($_POST['nuevapass']);
+	$nuevapass= $conexion->real_escape_string($_POST['nuevapass']);
 
-		$confirmapass= $conexion->real_escape_string($_POST['confirmapass']);
+	$confirmapass= $conexion->real_escape_string($_POST['confirmapass']);
 
 
 
-		global $conexion;
+	global $conexion;
+
+	
+
+	$stmt = $conexion->prepare("SELECT pass FROM tb_usuarios WHERE usuario = ? LIMIT 1");
+
+	$stmt->bind_param("s", $_SESSION['usuario']);
+
+	$stmt->execute();
+
+	$stmt->store_result();
+
+	$rows = $stmt->num_rows;
+
+	
+
+	if($rows > 0) 
+
+	{			
+
+		$stmt->bind_result($passwd);
+
+		$stmt->fetch();
 
 		
 
-		$stmt = $conexion->prepare("SELECT pass FROM tb_usuarios WHERE usuario = ? LIMIT 1");
-
-		$stmt->bind_param("s", $_SESSION['usuario']);
-
-		$stmt->execute();
-
-		$stmt->store_result();
-
-		$rows = $stmt->num_rows;
+		$validaPassw = password_verify($actualpass, $passwd);
 
 		
 
-		if($rows > 0) 
+		if($validaPassw)
 
-		{			
+		{
 
-				$stmt->bind_result($passwd);
+			if(validacontraseñas($nuevapass, $confirmapass))
 
-				$stmt->fetch();
+			{
 
-				
+				$id=$_SESSION['usuario'];
 
-				$validaPassw = password_verify($actualpass, $passwd);
+				$pass_hash = hashcontraseña($nuevapass);
 
-				
-
-				if($validaPassw)
-
-				{
-
-					if(validacontraseñas($nuevapass, $confirmapass))
-
-					{
-
-							$id=$_SESSION['usuario'];
-
-							$pass_hash = hashcontraseña($nuevapass);
-
-							$sql = "update tb_usuarios set pass= '$pass_hash'  where usuario='$id'";
+				$sql = "update tb_usuarios set pass= '$pass_hash'  where usuario='$id'";
 
 						//indico cuales seran los campos a modificar con sus respectivos valores siguiendo con los parametros que se asigno en la funcion de actualizar
 
-							include("../connections/config.php");
+				include("../connections/config.php");
 
-							$resultado = $conexion->query( $sql );
+				$resultado = $conexion->query( $sql );
 
-							if( $conexion->affected_rows > 0 )
+				if( $conexion->affected_rows > 0 )
 
-							{	
+				{	
 
-									echo "<script> alert ('Contraseña Modificada.') </script>";
+					echo "<script> alert ('Contraseña Modificada.') </script>";
 
 									echo "<script>location.href='../controlador/usuario.php'</script>";//me retorna a la pantalla inicial
 
-													
+									
 
 
 
-							}else
+								}else
 
 								{
 
-										echo "<script> alert ('Error: no se han actualizado los datos, Verifique la informacion que desea ingresar.') </script>";
+									echo "<script> alert ('Error: no se han actualizado los datos, Verifique la informacion que desea ingresar.') </script>";
 
 										echo "<script>location.href='../controlador/usuario.php'</script>";//me retorna a la pantalla inicial
 
 										
 
-								}	
+									}	
 
-					}else
+								}else
 
-						{
+								{
 
-							$errors[] = "Las contraseñas no coinciden";
+									$errors[] = "Las contraseñas no coinciden";
 
-						}
+								}
 
 						// if ($nuevapass==$confirmapass) {
 
-					
+								
 
 						// 	$sql = "update tb_usuarios set pass= '$nuevapass'  where usuario='$id'";
 
@@ -132,7 +132,7 @@
 
 						// 				echo "<script>location.href='usuario.php'</script>";//me retorna a la pantalla inicial
 
-														
+								
 
 
 
@@ -142,7 +142,7 @@
 
 						// 					echo "<script>location.href='usuario.php'</script>";//me retorna a la pantalla inicial
 
-											
+								
 
 						// 				}
 
@@ -160,33 +160,33 @@
 
 					//$_SESSION['tipo_usuario'] = $id_tipo;
 
-					
+								
 
 					//header("location: stockdispo.php");
 
-				} else 
+							} else 
 
-					{
+							{
 
-					$errors = "La contrase&ntilde;a es incorrecta";
+								$errors = "La contrase&ntilde;a es incorrecta";
 
-					}
+							}
 
-		} else
+						} else
 
-			{
+						{
 
-					 echo "<script> alert('la consulta no se realizo'); </script>";
+							echo "<script> alert('la consulta no se realizo'); </script>";
 
-			}
+						}
 
-		
+						
 
 	// 	$id=$_SESSION['usuario'];
 
 	// 	$sql = "select * from tb_usuarios where usuario = '$id'";
 
-		
+						
 
 	// 	include("config.php");
 
@@ -200,7 +200,7 @@
 
 	// 		if ($nuevapass==$confirmapass) {
 
-				
+						
 
 	// 			$sql = "update tb_usuarios set pass= '$nuevapass'  where usuario='$id'";
 
@@ -218,7 +218,7 @@
 
 	// 						echo "<script>location.href='usuario.php'</script>";//me retorna a la pantalla inicial
 
-											
+						
 
 
 
@@ -228,7 +228,7 @@
 
 	// 							echo "<script>location.href='usuario.php'</script>";//me retorna a la pantalla inicial
 
-								
+						
 
 	// 						}
 
@@ -252,14 +252,14 @@
 
 	// 	}
 
-	}else{
+					}else{
 
-			
+						
 
-		 	header("location: ../index.php");
+						header("location: ../index.php");
 
-	}
+					}
 
 
 
-?>
+					?>

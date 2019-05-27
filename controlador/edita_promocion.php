@@ -22,9 +22,9 @@ $valores2 = mysqli_fetch_array($resultado);
 
 $datos = array(
 
-				0 => $valores2['descripcion_promo'], 
+	0 => $valores2['descripcion_promo'], 
 
-				);
+);
 
 echo json_encode($datos);
 

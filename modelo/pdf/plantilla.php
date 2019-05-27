@@ -1,5 +1,5 @@
 	<link rel="shortcut icon" type="image/x-icon" href="images/logo1.png">
-<?php 
+	<?php 
 	session_start();
 
 	require 'fpdf/fpdf.php';
@@ -34,12 +34,12 @@
 		function Footer()
 		{
 		    //Footer de la pagina
-		    $this->SetY(-15);
-		    $this->SetFont('Arial','I',8);
-		    $this->SetTextColor(128);
-		    $this->Cell(0,10,'Pagina '.$this->PageNo(),0,0,'C');
+			$this->SetY(-15);
+			$this->SetFont('Arial','I',8);
+			$this->SetTextColor(128);
+			$this->Cell(0,10,'Pagina '.$this->PageNo(),0,0,'C');
 		}  
 	}
 
 
-?>
+	?>

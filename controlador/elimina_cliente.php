@@ -4,9 +4,9 @@ include('../connections/config.php');
 
 function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+	return $nfecha;
 
 }
 
@@ -42,18 +42,18 @@ $resultado = mysqli_query($conexion, $registro);
 
 echo '<table class="table table-striped table-condensed table-hover">
 
-        	<tr>
+<tr>
 
-		      <th width="20">Codigo</th>
-              <th width="25">Usuario</th>
-              <th width="100">Nombre</th>
-              <th width="50">Telefono</th>
-              <th width="200">Direccion</th>
-              <th width="200">Correo Electromico</th>
-              <th width="150">F. de registro</th>
-              <th width="10">Opciones</th>
+<th width="20">Codigo</th>
+<th width="25">Usuario</th>
+<th width="100">Nombre</th>
+<th width="50">Telefono</th>
+<th width="200">Direccion</th>
+<th width="200">Correo Electromico</th>
+<th width="150">F. de registro</th>
+<th width="10">Opciones</th>
 
-            </tr>';
+</tr>';
 
 
 
@@ -63,16 +63,16 @@ if(!empty($resultado)){
 
 		echo '<tr>
 
-				<td>'.$array ['cod_clie'].'</td>
-				<td>'.$array ['usuario'].'</td>
-				<td>'.$array ['nom_usu'].'</td>
-				<td>'.$array ['telefono_usu'].'</td>
-				<td>'.$array ['direccion_usu'].'</td>
-				<td>'.$array ['email'].'</td>
-                <td>'.utf8_decode($array ['fecha_registro_usu']).'</td>
-				<td><a href="javascript:editarCliente('.$array ['cod_clie'].');" class="fal fa-edit"></a> <a href="javascript:eliminarCliente('.$array ['cod_clie'].');" class="fal fa-trash-alt icon3"></a></td>
+		<td>'.$array ['cod_clie'].'</td>
+		<td>'.$array ['usuario'].'</td>
+		<td>'.$array ['nom_usu'].'</td>
+		<td>'.$array ['telefono_usu'].'</td>
+		<td>'.$array ['direccion_usu'].'</td>
+		<td>'.$array ['email'].'</td>
+		<td>'.utf8_decode($array ['fecha_registro_usu']).'</td>
+		<td><a href="javascript:editarCliente('.$array ['cod_clie'].');" class="fal fa-edit"></a> <a href="javascript:eliminarCliente('.$array ['cod_clie'].');" class="fal fa-trash-alt icon3"></a></td>
 
-				</tr>';
+		</tr>';
 
 	}
 
@@ -80,9 +80,9 @@ if(!empty($resultado)){
 
 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+	<td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+	</tr>';
 
 }
 

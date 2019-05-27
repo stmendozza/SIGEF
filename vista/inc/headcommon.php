@@ -12,10 +12,10 @@
 
 	<!-- <link href="../vista/css/jquery.dataTables.min.css" rel="stylesheet"> -->
 	<link rel="stylesheet"  href="../vista/css/estilos.css">   
-    <link href="../vista/dist/css/sb-admin-2.css" rel="stylesheet">
+	<link href="../vista/dist/css/sb-admin-2.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../vista/alertifyjs/alertify.js"></script>
-    <script src="../vista/js/menu.js" ></script>  
+	<script src="../vista/js/menu.js" ></script>  
 	<script src="../librerias/datatable/jquery.dataTables.min.js"></script>
 	<script src="../librerias/datatable/dataTables.bootstrap4.min.js"></script>
 	<!-- <script src="../vista/js/crud_productos.js"></script> -->

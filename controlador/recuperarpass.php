@@ -1,13 +1,13 @@
 <?php
-	require '../connections/config.php';
-	include '../controlador/funciones.php';
+require '../connections/config.php';
+include '../controlador/funciones.php';
 	// si el usuario esta conectado muestra el sitio si no lo redirige al index para que se logee o se registre
-	session_start();
-	
-	if(isset($_SESSION["usuario"])){
-		header("location: stockdispo.php");	
-	}else
-		{
+session_start();
+
+if(isset($_SESSION["usuario"])){
+	header("location: stockdispo.php");	
+}else
+{
 
 	$errors = array();
 	
@@ -82,78 +82,78 @@
 				echo "<a href='index.php' >Iniciar Sesion</a>";
 				exit;
 			}else {
-			$errors[] = "Error al enviar email";
+				$errors[] = "Error al enviar email";
 			}
-			} else {
+		} else {
 			$errors[] = "La direccion de correo electronico no existe";
 		}
 	}
-?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<?php include ("../vista/inc/headcommon.php");?>
-	<title>SIGEF| Recuperar Contraseña</title>	
-</head>
-<body> 
-<?php include('../vista/inc/headerlog.php'); ?>
-<header><h4 style="color:white; float:left; padding: 7px;">Recuperar Contraseña</h4></header>   
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-4">
-			</div>
+	?>
+	<!DOCTYPE html>
+	<html lang="es">
+	<head>
+		<?php include ("../vista/inc/headcommon.php");?>
+		<title>SIGEF| Recuperar Contraseña</title>	
+	</head>
+	<body> 
+		<?php include('../vista/inc/headerlog.php'); ?>
+		<header><h4 style="color:white; float:left; padding: 7px;">Recuperar Contraseña</h4></header>   
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-4">
+					</div>
 
-			<div class="col-xs-12 col-sm-4">
-					<br><br>
-	
-				<div style="margin-top:50px" class="col panel panel-default">
-				<div class="panel-heading">
-					
-					<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="../index.php">Iniciar Sesión</a></div>
-				</div>     
-				
-				<div style="padding-top:30px" class="panel-body">
-					
-					<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-					
-					<form id="loginform" class="form-horizontal AVAST_PAM_nonloginform" role="form" action="" method="POST" autocomplete="off">
+					<div class="col-xs-12 col-sm-4">
+						<br><br>
 						
-						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input id="email" type="email" class="form-control" name="email" placeholder="email" required="">                                        
-						</div>
-						
-						<div style="margin-top:10px" class="form-group">
-							<div class="col-sm-12 controls">
-								<button id="btn-login" type="submit" class="col btn btn-success">Enviar
-							</button></div>
-						</div>
-						
-						<div class="form-group">
-							<div class="col-md-12 control">
-								<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
-									No tiene una cuenta! <a href="registro.php">Registrate aquí</a>
-								</div>
+						<div style="margin-top:50px" class="col panel panel-default">
+							<div class="panel-heading">
+								
+								<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="../index.php">Iniciar Sesión</a></div>
+							</div>     
+							
+							<div style="padding-top:30px" class="panel-body">
+								
+								<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+								
+								<form id="loginform" class="form-horizontal AVAST_PAM_nonloginform" role="form" action="" method="POST" autocomplete="off">
+									
+									<div style="margin-bottom: 25px" class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input id="email" type="email" class="form-control" name="email" placeholder="email" required="">                                        
+									</div>
+									
+									<div style="margin-top:10px" class="form-group">
+										<div class="col-sm-12 controls">
+											<button id="btn-login" type="submit" class="col btn btn-success">Enviar
+											</button></div>
+										</div>
+										
+										<div class="form-group">
+											<div class="col-md-12 control">
+												<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+													No tiene una cuenta! <a href="registro.php">Registrate aquí</a>
+												</div>
+											</div>
+										</div>    
+									</form>
+									<?php echo resultBlock($errors); ?>
+								</div>                     
 							</div>
-						</div>    
-					</form>
-					<?php echo resultBlock($errors); ?>
-				</div>                     
-			</div>
-			</div>
-			<div class="col-xs-12 col-sm-4">
+						</div>
+						<div class="col-xs-12 col-sm-4">
+							
+						</div>
+					</div>
+					
+				</div>
 				
-			</div>
-		</div>
-		
-	</div>
-	
-</section>
-		<?php  	
+			</section>
+			<?php  	
 		}
- 		?>
+		?>
 		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 		<script src="../vista/js/bootstrap.min.js"></script>
-</body>
-</html>
+	</body>
+	</html>

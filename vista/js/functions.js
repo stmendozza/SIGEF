@@ -24,24 +24,24 @@ $(document).ready(function(){
 			$('#alert').show(1000);
 			return false;
 		}
-	    
-	    $('#loader').show();
-	    $.ajax({
-				url: directoryUrl+"/ajax.php",
-		        type: "post",
-		        data: $('#form_register_user').serialize(),
-		        success: function (response) {
+		
+		$('#loader').show();
+		$.ajax({
+			url: directoryUrl+"/ajax.php",
+			type: "post",
+			data: $('#form_register_user').serialize(),
+			success: function (response) {
 		        	//console.log(response);
 		        	$('#loader').hide();
 		        	if(response == 'userExist')
 		        	{
 		        		$('#alert').html('<p class="error">El correo o el usuario ya existe, ingresa otro.</p>');
-						$('#alert').show(1000);
+		        		$('#alert').show(1000);
 		        	}
 		        	if(response == 'ErrorDatos')
 		        	{
 		        		$('#alert').html('<p class="error">Error al crear el usuario.</p>');
-						$('#alert').show(1000);
+		        		$('#alert').show(1000);
 		        	}
 		        	if(response == 'save')
 		        	{
@@ -50,11 +50,11 @@ $(document).ready(function(){
 		        },
 		        error: function(response) {
 		        	$('#loader').hide();
-		           console.log("Error",response);
+		        	console.log("Error",response);
 		        }
 
 
-		});
-	    
+		    });
+		
 	});
 });

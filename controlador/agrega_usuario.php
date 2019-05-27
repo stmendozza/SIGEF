@@ -1,12 +1,12 @@
 <?php
- 
+
 include('../connections/config.php');
 
-  function fechaNormal($fecha){
+function fechaNormal($fecha){
 
-    $nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-    return $nfecha;
+	return $nfecha;
 
 }
 
@@ -35,11 +35,11 @@ switch($proceso){
 	case 'Registro':
 
 
-		$registro = ("INSERT INTO tb_usuarios (usuario, nom_usu, telefono_usu, email, direccion_usu)VALUES('$usuario', '$nombre', '$telefono', '$correo','$direccion')");
+	$registro = ("INSERT INTO tb_usuarios (usuario, nom_usu, telefono_usu, email, direccion_usu)VALUES('$usuario', '$nombre', '$telefono', '$correo','$direccion')");
 
-		$resultado = mysqli_query($conexion, $registro);
+	$resultado = mysqli_query($conexion, $registro);
 
-		
+	
 
 	break;
 
@@ -47,9 +47,9 @@ switch($proceso){
 
 	case 'Edicion':
 
-		$registro = ("UPDATE tb_usuarios SET usuario = '$usuario', nom_usu = '$nombre', telefono_usu = '$telefono', email = '$correo', direccion_usu = '$direccion' WHERE usuario = '$id'");
+	$registro = ("UPDATE tb_usuarios SET usuario = '$usuario', nom_usu = '$nombre', telefono_usu = '$telefono', email = '$correo', direccion_usu = '$direccion' WHERE usuario = '$id'");
 
-		$resultado = mysqli_query($conexion, $registro);
+	$resultado = mysqli_query($conexion, $registro);
 
 	break;
 

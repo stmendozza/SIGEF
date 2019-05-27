@@ -1,9 +1,9 @@
 <header id="header1">
 	<div class="container-fluid">
 		<div class="row">
-        	<div class="col-4 col-sm-1">
-                <a class="logosigef" href="../index.php"> 
-                    <svg viewBox="220 0 960 165">
+           <div class="col-4 col-sm-1">
+            <a class="logosigef" href="../index.php"> 
+                <svg viewBox="220 0 960 165">
                     <symbol id="s-text">
                         <text text-anchor="middle" x="50%" y="80%">SIGEF</text>
                     </symbol>
@@ -15,12 +15,12 @@
                         <use xlink:href="#s-text" class="text-copy"></use>
                         <use xlink:href="#s-text" class="text-copy"></use>
                     </g>
-                    </svg>
-                </a>
-			</div>
-			<div class="col-2 col-sm-5">
-			</div>
-			<div class="col-6 col-sm-6 ">   
+                </svg>
+            </a>
+        </div>
+        <div class="col-2 col-sm-5">
+        </div>
+        <div class="col-6 col-sm-6 ">   
             <ul  class="nav navbar-top-links navbar-right">
                 <!-- /.dropdown -->
                 <li class="dropdown">
@@ -108,8 +108,8 @@
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-       		</div> 	
-		</div>
-	</div>	
+        </div> 	
+    </div>
+</div>	
 </header>
 <header><span style="font-size: 25px; padding: 2.5px 15px 2.5px;" class="fal fa-bars show"></span></header>   

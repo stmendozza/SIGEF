@@ -1,7 +1,7 @@
 <?php      
 
 //****************************//
-		function calculameses($fecha_ini,$fecha_fin){
+		function calculaTiempo($fecha_ini,$fecha_fin){
 
 			//Indice 0= años
 			//Indice 1= meses
@@ -17,17 +17,17 @@
 		    	$tiempo []= $valor;
 		    }
 		
-	        if ($tiempo[1]<3) {
-	        $fondo='red'; 
-	        }
-	        if ($tiempo[1]>=3 and $tiempo[1]<=6) {
-	        $fondo='orange'; 
-	        }
-	        if ($tiempo[1]<3) {
-	        $fondo='green';
-	        }
+	        // if ($tiempo[1]<3) {
+	        // $fondo='red'; 
+	        // }
+	        // if ($tiempo[1]>=3 and $tiempo[1]<=6) {
+	        // $fondo='orange'; 
+	        // }
+	        // if ($tiempo[1]<3) {
+	        // $fondo='green';
+	        // }
 
-	        return $fondo;
+	        return $tiempo;
 	}
 
 		function buscar($campos,$tabla,$condicion)

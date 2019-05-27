@@ -10,21 +10,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'desde='+desde+'&hasta='+hasta,
+			data:'desde='+desde+'&hasta='+hasta,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros').html(datos);
+				$('#agrega-registros').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	});
 
@@ -40,21 +40,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'desde='+desde+'&hasta='+hasta,
+			data:'desde='+desde+'&hasta='+hasta,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros').html(datos);
+				$('#agrega-registros').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	});
 
@@ -94,23 +94,23 @@ function eliminarProducto(id){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'id='+id,
+			data:'id='+id,
 
-		success: function(registro){
+			success: function(registro){
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			return false;
+				return false;
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}else{
 
@@ -128,7 +128,7 @@ function editarProducto(id){
 
 	var url = 'edita_producto.php';
 
-		$.ajax({
+	$.ajax({
 
 		type:'POST',
 
@@ -138,31 +138,31 @@ function editarProducto(id){
 
 		success: function(valores){
 
-				var datos = eval(valores);
+			var datos = eval(valores);
 
-				$('#reg').hide();
+			$('#reg').hide();
 
-				$('#edi').show();
+			$('#edi').show();
 
-				$('#pro').val('Edicion');
+			$('#pro').val('Edicion');
 
-				$('#id-prod').val(id);
+			$('#id-prod').val(id);
 
-				$('#nombre').val(datos[0]);
+			$('#nombre').val(datos[0]);
 
-				$('#tipo').val(datos[1]);
+			$('#tipo').val(datos[1]);
 
-				$('#precio-uni').val(datos[2]);
+			$('#precio-uni').val(datos[2]);
 
-				$('#precio-dis').val(datos[3]);
+			$('#precio-dis').val(datos[3]);
 
-				$('#registra-producto').modal({
+			$('#registra-producto').modal({
 
-					show:true,
+				show:true,
 
-					backdrop:'static'
+				backdrop:'static'
 
-				});
+			});
 
 			return false;
 
@@ -188,36 +188,36 @@ function reportePDF(){
 
 $(document).ready(function(){
 
-    
+	
 
-    var show = 1;
+	var show = 1;
 
-    
+	
 
-    $('.show').on('click', function(){
+	$('.show').on('click', function(){
 
-        
+		
 
-        if(show == 1){
+		if(show == 1){
 
-            $('.content-menu').addClass("content-menu2");
+			$('.content-menu').addClass("content-menu2");
 
-            show = 0;
+			show = 0;
 
-        }else{
+		}else{
 
-            $('.content-menu').removeClass("content-menu2");
+			$('.content-menu').removeClass("content-menu2");
 
-            show = 1;
+			show = 1;
 
-        }
+		}
 
-        
+		
 
-        
+		
 
-    })
+	})
 
-    
+	
 
 })

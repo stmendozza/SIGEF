@@ -28,9 +28,9 @@ if(isset($hasta)==false){
 
 function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+	return $nfecha;
 
 }
 
@@ -50,21 +50,21 @@ $resultado=mysqli_query($conexion,$registro);
 
 echo '<table class="table table-striped table-condensed table-hover">
 
-        	<tr>
+<tr>
 
-            	<th width="100">Cod. Provedor</th>
+<th width="100">Cod. Provedor</th>
 
-                <th width="100">Nombre</th>
+<th width="100">Nombre</th>
 
-                <th width="50">Telefono</th>
+<th width="50">Telefono</th>
 
-                 <th width="50">Correo Electronico</th>
+<th width="50">Correo Electronico</th>
 
-                <th width="200">Direccion</th>
+<th width="200">Direccion</th>
 
-                <th width="50">Opciones</th>
+<th width="50">Opciones</th>
 
-            </tr>';
+</tr>';
 
 
 
@@ -74,22 +74,22 @@ if(!empty($resultado)){
 
 		echo '<tr>
 
-				<td>'.$array ['cod_prove'].'</td>
+		<td>'.$array ['cod_prove'].'</td>
 
-				<td>'.$array ['nom_prove'].'</td>
+		<td>'.$array ['nom_prove'].'</td>
 
-				<td>'.$array ['telefono_prove'].'</td>
+		<td>'.$array ['telefono_prove'].'</td>
 
-				<td>'.$array ['email'].'</td>
+		<td>'.$array ['email'].'</td>
 
-				<td>'.$array ['direccion_prove'].'</td>
+		<td>'.$array ['direccion_prove'].'</td>
 
 
-				<td><a href="javascript:editarProducto('.$array ['cod_prove'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarProducto('.$array ['cod_prove'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
+		<td><a href="javascript:editarProducto('.$array ['cod_prove'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarProducto('.$array ['cod_prove'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
 
-				</tr>';
+		</tr>';
 
-				
+		
 
 	}
 
@@ -97,9 +97,9 @@ if(!empty($resultado)){
 
 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+	<td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+	</tr>';
 
 }
 

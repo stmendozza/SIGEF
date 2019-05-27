@@ -4,9 +4,9 @@ include('../connections/config.php');
 
 function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+	return $nfecha;
 
 }
 
@@ -28,21 +28,21 @@ $resultado = mysqli_query($conexion, $registro);
 
 echo '<table class="table table-striped table-condensed table-hover">
 
-        	<tr>
+<tr>
 
-            	<th width="100">Cod. Provedor</th>
+<th width="100">Cod. Provedor</th>
 
-                <th width="100">Nombre</th>
+<th width="100">Nombre</th>
 
-                <th width="50">Telefono</th>
+<th width="50">Telefono</th>
 
-                 <th width="50">Correo Electronico</th>
+<th width="50">Correo Electronico</th>
 
-                <th width="200">Direccion</th>
+<th width="200">Direccion</th>
 
-                <th width="50">Opciones</th>
+<th width="50">Opciones</th>
 
-            </tr>';
+</tr>';
 
 if(!empty($resultado)){
 
@@ -50,20 +50,20 @@ if(!empty($resultado)){
 
 		echo '<tr>
 
-				<td>'.$registro2['cod_prove'].'</td>
+		<td>'.$registro2['cod_prove'].'</td>
 
-				<td>'.$registro2['nom_prove'].'</td>
+		<td>'.$registro2['nom_prove'].'</td>
 
-				<td>'.$registro2['telefono_prove'].'</td>
+		<td>'.$registro2['telefono_prove'].'</td>
 
-				<td>'.$registro2['email'].'</td>
+		<td>'.$registro2['email'].'</td>
 
-				<td>'.$registro2['direccion_prove'].'</td>
+		<td>'.$registro2['direccion_prove'].'</td>
 
 
-				<td><a href="javascript:editarProvedor('.$registro2['cod_prove'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarProvedor('.$registro2['cod_prove'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
+		<td><a href="javascript:editarProvedor('.$registro2['cod_prove'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarProvedor('.$registro2['cod_prove'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
 
-				</tr>';
+		</tr>';
 
 	}
 
@@ -71,9 +71,9 @@ if(!empty($resultado)){
 
 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+	<td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+	</tr>';
 
 }
 

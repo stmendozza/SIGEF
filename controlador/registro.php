@@ -1,150 +1,150 @@
  <?php 
 
-	
+ 
 
-	require '../connections/config.php';
+ require '../connections/config.php';
 
-	require '../controlador/funciones.php';
+ require '../controlador/funciones.php';
 
-	
+ 
 
-	$errors = array();
+ $errors = array();
 
-	
+ 
 
-	if(!empty($_POST)) 
+ if(!empty($_POST)) 
 
-	{
+ {
 
 		// $nombre = $conexion->real_escape_string($_POST['nombre']);
 
 		//echo $nombre;	
 
-		$usuario = $conexion->real_escape_string($_POST['usuario']);	
+ 	$usuario = $conexion->real_escape_string($_POST['usuario']);	
 
 		//echo $usuario;	
 
-		$password = $conexion->real_escape_string($_POST['contrasena']);	
+ 	$password = $conexion->real_escape_string($_POST['contrasena']);	
 
 		//echo $password;	
 
-		$con_password = $conexion->real_escape_string($_POST['repitecontrasena']);
+ 	$con_password = $conexion->real_escape_string($_POST['repitecontrasena']);
 
 		//echo $con_password;		
 
 		// $celular= $conexion->real_escape_string($_POST['celular']);
 
-		$email = $conexion->real_escape_string($_POST['email']);	
+ 	$email = $conexion->real_escape_string($_POST['email']);	
 
 		//echo $email;	
 
-		$captcha = $conexion->real_escape_string($_POST['g-recaptcha-response']);
+ 	$captcha = $conexion->real_escape_string($_POST['g-recaptcha-response']);
 
 		//echo $captcha;
 
-		date_default_timezone_set("america/bogota");
+ 	date_default_timezone_set("america/bogota");
 
-		$fecha_registro=date('Y-m-d H:i:s');	
+ 	$fecha_registro=date('Y-m-d H:i:s');	
 
-		$activo = 0;
+ 	$activo = 0;
 
 		//$tipo_usuario = 2;
 
-		$secret = '6LddGBwUAAAAAEHJFB2Gd8ROyHHFmFGuXlfmYo_E';
+ 	$secret = '6LddGBwUAAAAAEHJFB2Gd8ROyHHFmFGuXlfmYo_E';
 
-		
+ 	
 
-		if(!$captcha){
+ 	if(!$captcha){
 
-			$errors[] = " Por favor verifica el captcha";
+ 		$errors[] = " Por favor verifica el captcha";
 
-		}
+ 	}
 
-		
+ 	
 
-		if(isNull( $usuario, $email, $password, $con_password ))
+ 	if(isNull( $usuario, $email, $password, $con_password ))
 
-		{
+ 	{
 
-			$errors[] = " Debe llenar todos los campos";
+ 		$errors[] = " Debe llenar todos los campos";
 
-		}
+ 	}
 
-		
+ 	
 
-		if(!isEmail($email))
+ 	if(!isEmail($email))
 
-		{
+ 	{
 
-			$errors[] = " Dirección de correo inválida";
+ 		$errors[] = " Dirección de correo inválida";
 
-		}
+ 	}
 
-		
+ 	
 
-		if(!validacontraseñas($password, $con_password))
+ 	if(!validacontraseñas($password, $con_password))
 
-		{
+ 	{
 
-			$errors[] = " Las contraseñas no coinciden";
+ 		$errors[] = " Las contraseñas no coinciden";
 
-		}
+ 	}
 
-		
+ 	
 
-		if(usuarioExiste($usuario))
+ 	if(usuarioExiste($usuario))
 
-		{
+ 	{
 
-			$errors[] = " El nombre de usuario $usuario ya existe";
+ 		$errors[] = " El nombre de usuario $usuario ya existe";
 
-		}
+ 	}
 
-		
+ 	
 
-		if(emailExiste($email))
+ 	if(emailExiste($email))
 
-		{
+ 	{
 
-			$errors[] = " El correo electronico $email ya existe";
+ 		$errors[] = " El correo electronico $email ya existe";
 
-		}
+ 	}
 
-		
+ 	
 
-		if(count($errors) == 0)
+ 	if(count($errors) == 0)
 
-		{
+ 	{
 
-			$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
+ 		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
 
-			
+ 		
 
-			$arr = json_decode($response, TRUE);
+ 		$arr = json_decode($response, TRUE);
 
-			
+ 		
 
-			if($arr['success'])
+ 		if($arr['success'])
 
-			{
+ 		{
 
-				
+ 			
 
-				$pass_hash = hashcontraseña($password);
+ 			$pass_hash = hashcontraseña($password);
 
-				
+ 			
 
-				$token = generarToken();
+ 			$token = generarToken();
 
-				$rol=4;
+ 			$rol=4;
 
-				$registro = registroUsuario($usuario, $pass_hash, $email, $rol , $token, $activo,  $fecha_registro);
+ 			$registro = registroUsuario($usuario, $pass_hash, $email, $rol , $token, $activo,  $fecha_registro);
 
 				//echo $registro;
 
-				if(!empty($registro))
+ 			if(!empty($registro))
 
-				{
+ 			{
 
 					// session_start();
 
@@ -156,116 +156,116 @@
 
 					//exit;
 
-					
+ 				
 
-					$url = 'http://'.$_SERVER["SERVER_NAME"].'/SIGEF/controlador/activar.php?id='.$registro.'&val='.$token;
+ 				$url = 'http://'.$_SERVER["SERVER_NAME"].'/SIGEF/controlador/activar.php?id='.$registro.'&val='.$token;
 
-					
+ 				
 
-					$asunto = 'Activar Cuenta - SIGEF';
+ 				$asunto = 'Activar Cuenta - SIGEF';
 
-					$cuerpo = " 
-			<html> 
-			<head> 
-			<title>Activar Cuenta - SIGEF</title> 
-			<style type='text/css'>
-			.btn-azul{
-				background-color:#4B8BF4;
-				color:white;
-				border-color:#4B8BF4;
-				width:170px;
-				height:35px;
-			}
-			</style>
-			</head> 
-			<body>
-			<center> 
-			<h1>bienvenido!</h1> 
-			<p> 
-			Para Activar tu usuario y terminar el proceso de registro, presiona el siguiente boton:
-			<br/><br/>
-			<a href='$url'><button class='btn-azul'>Activar Cuenta</button></a> 
-			</p> 
-			<center>
-			</body> 
-			</html> 
-			"; 
-			
+ 				$cuerpo = " 
+ 				<html> 
+ 				<head> 
+ 				<title>Activar Cuenta - SIGEF</title> 
+ 				<style type='text/css'>
+ 				.btn-azul{
+ 					background-color:#4B8BF4;
+ 					color:white;
+ 					border-color:#4B8BF4;
+ 					width:170px;
+ 					height:35px;
+ 				}
+ 				</style>
+ 				</head> 
+ 				<body>
+ 				<center> 
+ 				<h1>bienvenido!</h1> 
+ 				<p> 
+ 				Para Activar tu usuario y terminar el proceso de registro, presiona el siguiente boton:
+ 				<br/><br/>
+ 				<a href='$url'><button class='btn-azul'>Activar Cuenta</button></a> 
+ 				</p> 
+ 				<center>
+ 				</body> 
+ 				</html> 
+ 				"; 
+ 				
 			//para el envío en formato HTML 
-			$headers = "MIME-Version: 1.0\r\n"; 
-			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+ 				$headers = "MIME-Version: 1.0\r\n"; 
+ 				$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
 
 			//dirección del remitente 
-			$headers .= "From: SIGEF <stmendozza@gmail.com>\r\n"; 
+ 				$headers .= "From: SIGEF <stmendozza@gmail.com>\r\n"; 
 
 			//if(enviarEmail($email, $nombre, $asunto, $cuerpo)){
-			if(mail($email, $asunto, $cuerpo, $headers)){
-					echo "Para terminar el proceso de registro siga las instrucciones que le hemos enviado la direccion de Correo Electronico: $email";
-					echo "<br><a href='../index.php' >Iniciar Sesion</a>";
-					exit; 
-					} else {
-						$erros[] = " Error al enviar Email";
-					}
+ 				if(mail($email, $asunto, $cuerpo, $headers)){
+ 					echo "Para terminar el proceso de registro siga las instrucciones que le hemos enviado la direccion de Correo Electronico: $email";
+ 					echo "<br><a href='../index.php' >Iniciar Sesion</a>";
+ 					exit; 
+ 				} else {
+ 					$erros[] = " Error al enviar Email";
+ 				}
 
-					
+ 				
 
-					} else {
+ 			} else {
 
-					$errors[] = " Error al Registrar";
+ 				$errors[] = " Error al Registrar";
 
-				}
+ 			}
 
-				
+ 			
 
-				} else {
+ 		} else {
 
-				$errors[] = ' Error al comprobar Captcha';
+ 			$errors[] = ' Error al comprobar Captcha';
 
-			}
+ 		}
 
-			
+ 		
 
-		}
+ 	}
 
-		
+ 	
 
-	}
+ }
 
-	
+ 
 
-?>
+ ?>
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 
-<html lang="es">
+ <html lang="es">
 
-<head>
+ <head>
 
-	<link rel="shortcut icon" type="image/x-icon" href="../vista/images/logo_1.png">
+ 	<link rel="shortcut icon" type="image/x-icon" href="../vista/images/logo_1.png">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>| Registro</title>
-	<?php include ("../vista/inc/headcommon.php");?>
+ 	<title>| Registro</title>
+ 	<?php include ("../vista/inc/headcommon.php");?>
 
-	<script src='https://www.google.com/recaptcha/api.js'></script>
+ 	<script src='https://www.google.com/recaptcha/api.js'></script>
 
-</head>
+ </head>
 
-<body>
-<?php include('../vista/inc/headerlog.php'); ?>
-<header><h4 style="color:white; float:left; padding: 7px;">Registro de Usuarios</h4></header>   
-<section>
+ <body>
+ 	<?php include('../vista/inc/headerlog.php'); ?>
+ 	<header><h4 style="color:white; float:left; padding: 7px;">Registro de Usuarios</h4></header>   
+ 	<section>
 
-	<div class="container">
+ 		<div class="container">
 
-		<div class="row">	
+ 			<div class="row">	
 
-			<div class="col-sm-4"></div>
+ 				<div class="col-sm-4"></div>
 
-			<div  class="col-12 col-sm-4">
+ 				<div  class="col-12 col-sm-4">
 
-				<div class="col-12 col-sm-12">
+ 					<div class="col-12 col-sm-12">
                 <!-- <a href="../index.php"> 
                     <svg viewBox="220 0 960 165">
                     <symbol id="s-text">
@@ -282,51 +282,51 @@
                     </svg>
                 </a> -->
 
-					<br><br>
+                <br><br>
 
-				</div>
-				
-
-
-				<div  class="panel panel-default">
-					
-					<div class="panel-heading ">
-
-						<div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="../index.php">Iniciar Sesión</a></div>
-
-					</div>  
-
-					
-
-					<div class="panel-body">
-
-						
-
-						<form class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" autocomplete="off">
-
-							
-
-							<div id="signupalert" style="display:none" class="alert alert-danger">
-
-								<p>Error:</p>
-
-								<span></span>
-
-							</div>
+            </div>
+            
 
 
+            <div  class="panel panel-default">
+            	
+            	<div class="panel-heading ">
 
-							<div class="form-group">
+            		<div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="../index.php">Iniciar Sesión</a></div>
 
-								<label for="usuario" class="col-12 control-label">Usuario</label>
+            	</div>  
 
-								<div class="col-12">
+            	
 
-									<input type="text" class="form-control" name="usuario" placeholder="Usuario" value="" required="">
+            	<div class="panel-body">
 
-								</div>
+            		
 
-							</div>
+            		<form class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" autocomplete="off">
+
+            			
+
+            			<div id="signupalert" style="display:none" class="alert alert-danger">
+
+            				<p>Error:</p>
+
+            				<span></span>
+
+            			</div>
+
+
+
+            			<div class="form-group">
+
+            				<label for="usuario" class="col-12 control-label">Usuario</label>
+
+            				<div class="col-12">
+
+            					<input type="text" class="form-control" name="usuario" placeholder="Usuario" value="" required="">
+
+            				</div>
+
+            			</div>
 
 
 <!-- 
@@ -356,7 +356,7 @@
 
 							</div> -->
 
-						
+							
 
 							<div class="form-group">
 
@@ -441,7 +441,7 @@
 	<br><br>
 
 </section>
-    <script src="../vista/js/bootstrap.min.js"></script>
+<script src="../vista/js/bootstrap.min.js"></script>
 
 </body>
 

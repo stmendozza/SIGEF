@@ -41,25 +41,25 @@ function agregaRegistroRol(){
 
 			if ($('#pro').val() == 'Registro'){
 
-			$('#formulario')[0].reset();
+				$('#formulario')[0].reset();
 
-			$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			window.location="roles.php";
+				window.location="roles.php";
 
-			return false;
+				return false;
 
 			}else{
 
-			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			window.location="roles.php";
+				window.location="roles.php";
 
-			return false;
+				return false;
 
 			}
 
@@ -70,7 +70,7 @@ function agregaRegistroRol(){
 	return false;
 
 }
- 
+
 
 
 function eliminarRol(id){
@@ -83,25 +83,25 @@ function eliminarRol(id){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'id='+id,
+			data:'id='+id,
 
-		success: function(registro){
+			success: function(registro){
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			window.location="roles.php";
+				window.location="roles.php";
 
-			return false;
+				return false;
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}else{
 
@@ -119,7 +119,7 @@ function editarRol(id){
 
 	var url = 'edita_rol.php';
 
-		$.ajax({
+	$.ajax({
 
 		type:'POST',
 
@@ -129,27 +129,27 @@ function editarRol(id){
 
 		success: function(valores){
 
-				var datos = eval(valores);
+			var datos = eval(valores);
 
-				$('#reg').hide();
+			$('#reg').hide();
 
-				$('#edi').show();
+			$('#edi').show();
 
-				$('#pro').val('Edicion');
+			$('#pro').val('Edicion');
 
-				$('#id-prod').val(id);
+			$('#id-prod').val(id);
 
-				$('#nom_rol').val(datos[0]);
+			$('#nom_rol').val(datos[0]);
 
-				$('#responsabilidades').val(datos[1]);
+			$('#responsabilidades').val(datos[1]);
 
-				$('#registra-rol').modal({
+			$('#registra-rol').modal({
 
-					show:true,
+				show:true,
 
-					backdrop:'static'
+				backdrop:'static'
 
-				});
+			});
 
 			return false;
 
@@ -161,14 +161,14 @@ function editarRol(id){
 
 }
 $(document).ready(function(){
-    var show = 1;
-    $('.show').on('click', function(){
-        if(show == 1){
-           $('.content-menu').addClass("content-menu2");
-            show = 0;
-        }else{
-            $('.content-menu').removeClass("content-menu2");
-            show = 1;
-        }
-    })
+	var show = 1;
+	$('.show').on('click', function(){
+		if(show == 1){
+			$('.content-menu').addClass("content-menu2");
+			show = 0;
+		}else{
+			$('.content-menu').removeClass("content-menu2");
+			show = 1;
+		}
+	})
 })

@@ -1,12 +1,12 @@
  <?php
 
-include('../connections/config.php');
+ include('../connections/config.php');
 
-function fechaNormal($fecha){
+ function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+  $nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+  return $nfecha;
 
 }
 
@@ -32,16 +32,16 @@ $resultado=mysqli_query($conexion,$registro);
 
 echo '<table class="table table-striped table-condensed table-hover">
 
-                  <tr>
-                      <th width="60">Usuario</th>
-                      <th width="220">Nombre</th>
-                      <th width="50">Telefono</th>
-                      <th width="50">rol</th>
-                      <th width="150">Correo Electronico</th>
-                      <th width="150">Accesos</th>
-                      <th width="150">Opciones</th>
-                      <th width="100">Fecha Registro</th>
-                  </tr>';
+<tr>
+<th width="60">Usuario</th>
+<th width="220">Nombre</th>
+<th width="50">Telefono</th>
+<th width="50">rol</th>
+<th width="150">Correo Electronico</th>
+<th width="150">Accesos</th>
+<th width="150">Opciones</th>
+<th width="100">Fecha Registro</th>
+</tr>';
 
 
 
@@ -51,36 +51,36 @@ if(!empty($resultado)){
 
 		echo '<tr>
 
-              <td>'.$row['usuario'].'</td>
-              <td>'.utf8_decode($row['nom_usu']).'</td>
-              <td>'.$row['telefono_usu'].'</td>
-              <td>'.$row['nom_rol'].'</td>
-              <td>'.$row['email'].'</td>
-              <td><select name="select">
-                  <option value="Facturar">Facturar</option> 
-                  <option value="Inventario" selected>Inventario</option>
-                  <option value="usuario">Usuario</option>
-                  </select> 
-              </td>                   
-              <td>
-                  <a href="javascript:editarUsuario('.$row['usuario'].');" class="glyphicon glyphicon-edit"></a> 
-                  <a href="javascript:eliminarUsuario('.$row['usuario'].');" class="glyphicon glyphicon-remove-circle icon3"></a>
-              </td>          
-              <td>'.fechaNormal($row['fecha_registro_usu']).'</td>
+    <td>'.$row['usuario'].'</td>
+    <td>'.utf8_decode($row['nom_usu']).'</td>
+    <td>'.$row['telefono_usu'].'</td>
+    <td>'.$row['nom_rol'].'</td>
+    <td>'.$row['email'].'</td>
+    <td><select name="select">
+    <option value="Facturar">Facturar</option> 
+    <option value="Inventario" selected>Inventario</option>
+    <option value="usuario">Usuario</option>
+    </select> 
+    </td>                   
+    <td>
+    <a href="javascript:editarUsuario('.$row['usuario'].');" class="glyphicon glyphicon-edit"></a> 
+    <a href="javascript:eliminarUsuario('.$row['usuario'].');" class="glyphicon glyphicon-remove-circle icon3"></a>
+    </td>          
+    <td>'.fechaNormal($row['fecha_registro_usu']).'</td>
 
 
 
-              </tr>';   
+    </tr>';   
 
-	}
+  }
 
 }else{
 
 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+  <td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+  </tr>';
 
 }
 

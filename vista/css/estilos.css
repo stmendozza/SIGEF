@@ -195,9 +195,9 @@ svg {
 input[type=file] {
 
     position: absolute;
-	visibility: hidden;
-	width: 0;
-	z-index: -9999;
+    visibility: hidden;
+    width: 0;
+    z-index: -9999;
 }
 
 .onoffswitch {
@@ -309,7 +309,7 @@ header span:hover{
 .content-menu li{
 
     list-style: none;
-	padding-top: 0px;
+    padding-top: 0px;
     color: white;
     transition: all 300ms;
     cursor: pointer;
@@ -555,8 +555,8 @@ h4{
 }
 
 .pagination{
-/*    display: block;*/
-	margin: 0px;
+    /*    display: block;*/
+    margin: 0px;
 }
 
 
@@ -572,149 +572,149 @@ h4{
 .contenedor-menu{
 
     width: 135px;
-	padding:0;
-	/*background: #424242;	*/
-	display: inline-block;
+    padding:0;
+    /*background: #424242;	*/
+    display: inline-block;
     font-size: 13px;
-	line-height: 18px;
+    line-height: 18px;
 }
 
 /*
 .contenedor-menu .menu{
     width: 100%;
-}*/
+    }*/
 
-.contenedor-menu ul {
-    list-style: none;
-}
+    .contenedor-menu ul {
+        list-style: none;
+    }
 
-a:focus, a:hover {
-    color: gray;
-    text-decoration:    none;
-}
+    a:focus, a:hover {
+        color: gray;
+        text-decoration:    none;
+    }
 
-.contenedor-menu .menu li a{
-    color: #424242;
-    display: block;
-    padding: 15px 10px;
-    background: white;
-|   font-family:  'Roboto', serif;
-    font-weight: bold;
-}
+    .contenedor-menu .menu li a{
+        color: #424242;
+        display: block;
+        padding: 15px 10px;
+        background: white;
+        |   font-family:  'Roboto', serif;
+        font-weight: bold;
+    }
 
-.contenedor-menu .menu li a:hover{
-    background: #c5c5c5;
-    color: #211c2f;
-    /*border-left: solid gray;*/
-}
+    .contenedor-menu .menu li a:hover{
+        background: #c5c5c5;
+        color: #211c2f;
+        /*border-left: solid gray;*/
+    }
 
-.contenedor-menu .menu .icon{
-    font-size: 12px;
-    line-height: 18px;
-}
+    .contenedor-menu .menu .icon{
+        font-size: 12px;
+        line-height: 18px;
+    }
 
-.contenedor-menu .menu .icon.izquierda{
-    float: left;
-    margin-right: 10px;
-}
+    .contenedor-menu .menu .icon.izquierda{
+        float: left;
+        margin-right: 10px;
+    }
 
-.contenedor-menu .menu .icon.derecha{
-    float: right;
-    margin-left:  10px;
-}
+    .contenedor-menu .menu .icon.derecha{
+        float: right;
+        margin-left:  10px;
+    }
 
-.contenedor-menu .menu ul{
-    display: none;
-}
+    .contenedor-menu .menu ul{
+        display: none;
+    }
 
-.contenedor-menu .menu ul li a{
-    background: #efe9e9;
-    color: #211c2f;
-}
+    .contenedor-menu .menu ul li a{
+        background: #efe9e9;
+        color: #211c2f;
+    }
 
-.contenedor-menu .menu .activado > a{
-    background: #efe9e9;
-    color: #424242;
-}
+    .contenedor-menu .menu .activado > a{
+        background: #efe9e9;
+        color: #424242;
+    }
 
-.contenedor-section{
+    .contenedor-section{
 
-	height:510px;
-	padding: 0;
-	overflow: scroll;
-	display: inline;
-	font-family: 'Roboto', sans-serif;
-	line-height: 18px;
-}
+     height:510px;
+     padding: 0;
+     overflow: scroll;
+     display: inline;
+     font-family: 'Roboto', sans-serif;
+     line-height: 18px;
+ }
 
-.contenedor-section1{
+ .contenedor-section1{
 
-	overflow: hidden;
-	width: 83%;
-    height:550px;
-	padding: 0;
-}
+     overflow: hidden;
+     width: 83%;
+     height:550px;
+     padding: 0;
+ }
 
-.iconreportes{
+ .iconreportes{
 
-	font-size: 60px;
-}
+     font-size: 60px;
+ }
 
-section table tr td input{
+ section table tr td input{
 
-	width:90%;
-	height:35px;
-	outline:none;
-	font-size:14px;
-}
+     width:90%;
+     height:35px;
+     outline:none;
+     font-size:14px;
+ }
 
-.registros{
+ .registros{
 
-	margin:auto;
-	width:100%;
-	margin-top:0px;
-	/*border:1px solid #6F96DF;*/
-	height:auto;
-	padding-left:0px;
-    padding-right:0px;
-}
+     margin:auto;
+     width:100%;
+     margin-top:0px;
+     /*border:1px solid #6F96DF;*/
+     height:auto;
+     padding-left:0px;
+     padding-right:0px;
+ }
 
-.formulario table tr td{
+ .formulario table tr td{
 
-	padding:10px;
-}
+     padding:10px;
+ }
 
-.formulario table tr td input{
+ .formulario table tr td input{
 
-	width:100%;
-    outline:none;
-}
+     width:100%;
+     outline:none;
+ }
 
-.formulario table tr td select{
+ .formulario table tr td select{
 
-	width:100%;
-	height:30px;
-	outline:none;
-}
+     width:100%;
+     height:30px;
+     outline:none;
+ }
 
-.bien{
+ .bien{
 
-	background-color:#3CBE34;
-	text-align:center;
-	font-size:14px;
-	color:#FFF;
-	padding:5px;
-}
+     background-color:#3CBE34;
+     text-align:center;
+     font-size:14px;
+     color:#FFF;
+     padding:5px;
+ }
 
 
 
-@media screen and (max-width: 768px){
+ @media screen and (max-width: 768px){
 
-	.contenedor-section0{
-    	padding: 0;
-}
+     .contenedor-section0{
+         padding: 0;
+     }
 
-    .content-menu{
+     .content-menu{
         height: 850px;
     }
 }
@@ -722,19 +722,19 @@ section table tr td input{
 @media (min-width: 768px){
 
 	.container {
-    width: 100%;
-}
+        width: 100%;
+    }
 
     #footer1{
-	height: 100px;
-}
+     height: 100px;
+ }
 
-	.smenu{
-	height:600px;
-}
+ .smenu{
+     height:600px;
+ }
 
-	.contenedor-section0{
-	height:580px;
-	padding: 0;
-}
+ .contenedor-section0{
+     height:580px;
+     padding: 0;
+ }
 }

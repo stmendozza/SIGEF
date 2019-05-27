@@ -10,21 +10,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'desde='+desde+'&hasta='+hasta,
+			data:'desde='+desde+'&hasta='+hasta,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros-promo').html(datos);
+				$('#agrega-registros-promo').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}); 
 
@@ -40,21 +40,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'desde='+desde+'&hasta='+hasta,
+			data:'desde='+desde+'&hasta='+hasta,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros-promo').html(datos);
+				$('#agrega-registros-promo').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	});
 
@@ -90,21 +90,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'dato='+dato,
+			data:'dato='+dato,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros-promo').html(datos);
+				$('#agrega-registros-promo').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	});
 
@@ -130,21 +130,21 @@ function agregaRegistroPromocion(){
 
 			if ($('#pro').val() == 'Registro'){
 
-			$('#formulario')[0].reset();
+				$('#formulario')[0].reset();
 
-			$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros-promo').html(registro);
+				$('#agrega-registros-promo').html(registro);
 
-			return false;
+				return false;
 
 			}else{
 
-			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros-promo').html(registro);
+				$('#agrega-registros-promo').html(registro);
 
-			return false;
+				return false;
 
 			}
 
@@ -155,7 +155,7 @@ function agregaRegistroPromocion(){
 	return false;
 
 }
- 
+
 
 
 function eliminarPromocion(id){
@@ -168,23 +168,23 @@ function eliminarPromocion(id){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'id='+id,
+			data:'id='+id,
 
-		success: function(registro){
+			success: function(registro){
 
-			$('#agrega-registros-promo').html(registro);
+				$('#agrega-registros-promo').html(registro);
 
-			return false;
+				return false;
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}else{
 
@@ -202,7 +202,7 @@ function editarPromocion(id){
 
 	var url = 'edita_promocion.php';
 
-		$.ajax({
+	$.ajax({
 
 		type:'POST',
 
@@ -212,25 +212,25 @@ function editarPromocion(id){
 
 		success: function(valores){
 
-				var datos = eval(valores);
+			var datos = eval(valores);
 
-				$('#reg').hide();
+			$('#reg').hide();
 
-				$('#edi').show();
+			$('#edi').show();
 
-				$('#pro').val('Edicion');
+			$('#pro').val('Edicion');
 
-				$('#id-prod').val(id);
+			$('#id-prod').val(id);
 
-				$('#descripcion_promo').val(datos[0]);
+			$('#descripcion_promo').val(datos[0]);
 
-				$('#registra-promo').modal({
+			$('#registra-promo').modal({
 
-					show:true,
+				show:true,
 
-					backdrop:'static'
+				backdrop:'static'
 
-				});
+			});
 
 			return false;
 
@@ -256,36 +256,36 @@ function reportePDF(){
 
 $(document).ready(function(){
 
-    
+	
 
-    var show = 1;
+	var show = 1;
 
-    
+	
 
-    $('.show').on('click', function(){
+	$('.show').on('click', function(){
 
-        
+		
 
-        if(show == 1){
+		if(show == 1){
 
-            $('.content-menu').addClass("content-menu2");
+			$('.content-menu').addClass("content-menu2");
 
-            show = 0;
+			show = 0;
 
-        }else{
+		}else{
 
-            $('.content-menu').removeClass("content-menu2");
+			$('.content-menu').removeClass("content-menu2");
 
-            show = 1;
+			show = 1;
 
-        }
+		}
 
-        
+		
 
-        
+		
 
-    })
+	})
 
-    
+	
 
 })

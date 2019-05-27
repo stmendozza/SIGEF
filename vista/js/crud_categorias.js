@@ -42,25 +42,25 @@ function agregaRegistroCategoria(){
 
 			if ($('#pro').val() == 'Registro'){
 
-			$('#formulario')[0].reset();
+				$('#formulario')[0].reset();
 
-			$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros-categ').html(registro);
+				$('#agrega-registros-categ').html(registro);
 
-			window.location.href = "../controlador/categorias.php";
+				window.location.href = "../controlador/categorias.php";
 
-			return false;
+				return false;
 
 			}else{
 
-			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros-categ').html(registro);
+				$('#agrega-registros-categ').html(registro);
 
-			window.location.href = "../controlador/categorias.php";
+				window.location.href = "../controlador/categorias.php";
 
-			return false;
+				return false;
 
 			}
 
@@ -71,7 +71,7 @@ function agregaRegistroCategoria(){
 	return false;
 
 }
- 
+
 
 
 function eliminarCategoria(id){
@@ -84,25 +84,25 @@ function eliminarCategoria(id){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'id='+id,
+			data:'id='+id,
 
-		success: function(registro){
+			success: function(registro){
 
-			$('#agrega-registros-categ').html(registro);
-			
-			window.location.href = "../controlador/categorias.php";
+				$('#agrega-registros-categ').html(registro);
+				
+				window.location.href = "../controlador/categorias.php";
 
-			return false;
+				return false;
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}else{
 
@@ -120,7 +120,7 @@ function editarCategoria(id){
 
 	var url = 'edita_categoria.php';
 
-		$.ajax({
+	$.ajax({
 
 		type:'POST',
 
@@ -130,25 +130,25 @@ function editarCategoria(id){
 
 		success: function(valores){
 
-				var datos = eval(valores);
+			var datos = eval(valores);
 
-				$('#reg').hide();
+			$('#reg').hide();
 
-				$('#edi').show();
+			$('#edi').show();
 
-				$('#pro').val('Edicion');
+			$('#pro').val('Edicion');
 
-				$('#id-prod').val(id);
+			$('#id-prod').val(id);
 
-				$('#nom_categ').val(datos[0]);
+			$('#nom_categ').val(datos[0]);
 
-				$('#registra-categoria').modal({
+			$('#registra-categoria').modal({
 
-					show:true,
+				show:true,
 
-					backdrop:'static'
+				backdrop:'static'
 
-				});
+			});
 
 			return false;
 
@@ -175,36 +175,36 @@ function reportePDF(){
 
 $(document).ready(function(){
 
-    
+	
 
-    var show = 1;
+	var show = 1;
 
-    
+	
 
-    $('.show').on('click', function(){
+	$('.show').on('click', function(){
 
-        
+		
 
-        if(show == 1){
+		if(show == 1){
 
-            $('.content-menu').addClass("content-menu2");
+			$('.content-menu').addClass("content-menu2");
 
-            show = 0;
+			show = 0;
 
-        }else{
+		}else{
 
-            $('.content-menu').removeClass("content-menu2");
+			$('.content-menu').removeClass("content-menu2");
 
-            show = 1;
+			show = 1;
 
-        }
+		}
 
-        
+		
 
-        
+		
 
-    })
+	})
 
-    
+	
 
 })

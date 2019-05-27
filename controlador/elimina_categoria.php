@@ -4,9 +4,9 @@ include('../connections/config.php');
 
 function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+	return $nfecha;
 
 }
 
@@ -35,13 +35,13 @@ $resultado = mysqli_query($conexion, $registro);
 
 echo '<table class="table table-striped table-condensed table-hover">
 
-        	<tr>
+<tr>
 
-            	<th width="50">Codigo</th>
-                <th width="300">Nombre</th>
-                <th width="50">Opciones</th>
+<th width="50">Codigo</th>
+<th width="300">Nombre</th>
+<th width="50">Opciones</th>
 
-            </tr>';
+</tr>';
 
 
 
@@ -51,13 +51,13 @@ if(!empty($resultado)){
 
 		echo '<tr>
 
-				<td>'.$array ['cod_categ'].'</td>
-				<td>'.$array ['nom_categ'].'</td>
-				<td><a href="javascript:editarCategoria('.$array ['cod_categ'].');" class="fal fa-edit"></a> 
-				<a href="javascript:eliminarCategoria('.$array ['cod_categ'].');" class="fal fa-trash-alt icon3"></a>
-				</td>
+		<td>'.$array ['cod_categ'].'</td>
+		<td>'.$array ['nom_categ'].'</td>
+		<td><a href="javascript:editarCategoria('.$array ['cod_categ'].');" class="fal fa-edit"></a> 
+		<a href="javascript:eliminarCategoria('.$array ['cod_categ'].');" class="fal fa-trash-alt icon3"></a>
+		</td>
 
-				</tr>';
+		</tr>';
 
 	}
 
@@ -65,9 +65,9 @@ if(!empty($resultado)){
 
 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+	<td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+	</tr>';
 
 }
 

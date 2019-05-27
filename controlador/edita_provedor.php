@@ -24,9 +24,9 @@ $datos = array(
 
 				// 3 => $valores2['direccion'],
 
-				0 => $valores2['usuario'],
+	0 => $valores2['usuario'],
 
-				);
+);
 
 echo json_encode($datos);
 

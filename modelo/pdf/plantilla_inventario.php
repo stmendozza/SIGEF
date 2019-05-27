@@ -1,48 +1,48 @@
 <?php 
 
-	session_start();	 
+session_start();	 
 
-	require 'fpdf/fpdf.php';
+require 'fpdf/fpdf.php';
 
 
 
-	class PDF extends FPDF
+class PDF extends FPDF
+
+{
+
+	function Header()
 
 	{
 
-		function Header()
-
-		{
-
 			//$this->image('images/sen2.png', 10, 10,50);
 
-			$this->Image('images/logo1.png' , 10, 10,50);
+		$this->Image('images/logo1.png' , 10, 10,50);
 
-			$this->SetFont('Arial','B',15);
+		$this->SetFont('Arial','B',15);
 
-			$this->Cell(135,'','',0);
+		$this->Cell(135,'','',0);
 
-			$this->Cell(140,5,'FAMISALUD S.A.S.',0,1,'R');
+		$this->Cell(140,5,'FAMISALUD S.A.S.',0,1,'R');
 
-			$this->SetFont('Arial', 'B', 11);
+		$this->SetFont('Arial', 'B', 11);
 
-			$this->Cell(135,'','',0);
+		$this->Cell(135,'','',0);
 
-			$this->Cell(140,5,'NIT 900354851-5',0,1,'R');
+		$this->Cell(140,5,'NIT 900354851-5',0,1,'R');
 
-			$this->Cell(135,'','',0);
+		$this->Cell(135,'','',0);
 
-			$this->Cell(140,5,'Hoy: '.date('d-m-Y').'',0,1,'R');
+		$this->Cell(140,5,'Hoy: '.date('d-m-Y').'',0,1,'R');
 
-			$this->Cell(135,'','',0);
+		$this->Cell(135,'','',0);
 
-			$this->Cell(140,5,'Usuario|'.$_SESSION['usuario'].'',0,1,'R');
+		$this->Cell(140,5,'Usuario|'.$_SESSION['usuario'].'',0,1,'R');
 
-			$this->Ln(5);	
+		$this->Ln(5);	
 
-			
+		
 
-		}
+	}
 
 
 
@@ -60,23 +60,23 @@
 
 		// }
 
-		function Footer()
+	function Footer()
 
-		{
+	{
 
 		    //Footer de la pagina
 
-		    $this->SetY(-15);
+		$this->SetY(-15);
 
-		    $this->SetFont('Arial','I',8);
+		$this->SetFont('Arial','I',8);
 
-		    $this->SetTextColor(128);
+		$this->SetTextColor(128);
 
-		    $this->Cell(0,10,'Pagina '.$this->PageNo(),0,0,'C');
+		$this->Cell(0,10,'Pagina '.$this->PageNo(),0,0,'C');
 
-		}  
+	}  
 
-	}
+}
 
 
 

@@ -1,12 +1,12 @@
 <?php 
- 
+
 include('../connections/config.php');
 
-  function fechaNormal($fecha){
+function fechaNormal($fecha){
 
-    $nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-    return $nfecha;
+	return $nfecha;
 
 }
 
@@ -29,9 +29,9 @@ switch($proceso){
 
 	case 'Registro':
 
-		$registro = ("INSERT INTO tb_tipos_productos (nom_tipo)VALUES('$nombre')");
+	$registro = ("INSERT INTO tb_tipos_productos (nom_tipo)VALUES('$nombre')");
 
-		$resultado = mysqli_query($conexion, $registro);
+	$resultado = mysqli_query($conexion, $registro);
 
 
 		// $registro = ("INSERT INTO tb_provedores (cod_usuario_prove)VALUES('$usuario')");
@@ -44,9 +44,9 @@ switch($proceso){
 
 	case 'Edicion':
 
-		$edicion = ("UPDATE tb_tipos_productos SET nom_tipo = '$nombre' WHERE cod_tipo = '$id'");
+	$edicion = ("UPDATE tb_tipos_productos SET nom_tipo = '$nombre' WHERE cod_tipo = '$id'");
 
-		$resultado = mysqli_query($conexion, $edicion);
+	$resultado = mysqli_query($conexion, $edicion);
 
 	break;
 

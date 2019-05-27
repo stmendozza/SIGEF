@@ -1,16 +1,16 @@
  <?php
 
-include('../connections/config.php');
+ include('../connections/config.php');
 
-function fechaNormal($fecha){
+ function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+ 	$nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+ 	return $nfecha;
 
-}
+ }
 
-$dato = $_POST['dato'];
+ $dato = $_POST['dato'];
 
 
 
@@ -18,11 +18,11 @@ $dato = $_POST['dato'];
 
 
 
-$registro="SELECT * FROM tb_categorias_productos WHERE cod_categ LIKE '%$dato%' OR nom_categ LIKE '%$dato%' ORDER BY cod_categ ASC";
+ $registro="SELECT * FROM tb_categorias_productos WHERE cod_categ LIKE '%$dato%' OR nom_categ LIKE '%$dato%' ORDER BY cod_categ ASC";
 
 
 
-$resultado=mysqli_query($conexion,$registro);
+ $resultado=mysqli_query($conexion,$registro);
 
 
 
@@ -30,46 +30,46 @@ $resultado=mysqli_query($conexion,$registro);
 
 
 
-echo '<table class="table table-striped table-condensed table-hover" id=mitabla"">
+ echo '<table class="table table-striped table-condensed table-hover" id=mitabla"">
 
-        	<tr>
+ <tr>
 
-            	<th width="50">Codigo</th>
+ <th width="50">Codigo</th>
 
-                <th width="300">Nombre</th>
+ <th width="300">Nombre</th>
 
-                <th width="50">Opciones</th>
+ <th width="50">Opciones</th>
 
-            </tr>';
+ </tr>';
 
 
 
-if(!empty($resultado)){
+ if(!empty($resultado)){
 
-	while($row=mysqli_fetch_array($resultado)){
+ 	while($row=mysqli_fetch_array($resultado)){
 
-		echo '<tr>
+ 		echo '<tr>
 
-				<td>'.$row['cod_categ'].'</td>
+ 		<td>'.$row['cod_categ'].'</td>
 
-				<td>'.$row['nom_categ'].'</td>
+ 		<td>'.$row['nom_categ'].'</td>
 
-				<td><a href="javascript:editarCategoria('.$row['cod_categ'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarCategoria('.$row['cod_categ'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
+ 		<td><a href="javascript:editarCategoria('.$row['cod_categ'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarCategoria('.$row['cod_categ'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
 
-				</tr>';
+ 		</tr>';
 
-	}
+ 	}
 
-}else{
+ }else{
 
-	echo '<tr>
+ 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+ 	<td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+ 	</tr>';
 
-}
+ }
 
-echo '</table>';
+ echo '</table>';
 
-?>
+ ?>

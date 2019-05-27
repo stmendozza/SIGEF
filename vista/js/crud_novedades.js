@@ -10,21 +10,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'desde='+desde+'&hasta='+hasta,
+			data:'desde='+desde+'&hasta='+hasta,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros').html(datos);
+				$('#agrega-registros').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}); 
 
@@ -40,21 +40,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'desde='+desde+'&hasta='+hasta,
+			data:'desde='+desde+'&hasta='+hasta,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros').html(datos);
+				$('#agrega-registros').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	});
 
@@ -90,21 +90,21 @@ $(function(){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'dato='+dato,
+			data:'dato='+dato,
 
-		success: function(datos){
+			success: function(datos){
 
-			$('#agrega-registros').html(datos);
+				$('#agrega-registros').html(datos);
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	});
 
@@ -130,21 +130,21 @@ function agregaRegistroProducto(){
 
 			if ($('#pro').val() == 'Registro'){
 
-			$('#formulario')[0].reset();
+				$('#formulario')[0].reset();
 
-			$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			return false;
+				return false;
 
 			}else{
 
-			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			return false;
+				return false;
 
 			}
 
@@ -155,7 +155,7 @@ function agregaRegistroProducto(){
 	return false;
 
 }
- 
+
 
 
 function eliminarProducto(id){
@@ -168,23 +168,23 @@ function eliminarProducto(id){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'id='+id,
+			data:'id='+id,
 
-		success: function(registro){
+			success: function(registro){
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			return false;
+				return false;
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}else{
 
@@ -202,7 +202,7 @@ function editarProducto(id){
 
 	var url = 'edita_producto.php';
 
-		$.ajax({
+	$.ajax({
 
 		type:'POST',
 
@@ -212,33 +212,33 @@ function editarProducto(id){
 
 		success: function(valores){
 
-				var datos = eval(valores);
+			var datos = eval(valores);
 
-				$('#reg').hide();
+			$('#reg').hide();
 
-				$('#edi').show();
+			$('#edi').show();
 
-				$('#pro').val('Edicion');
+			$('#pro').val('Edicion');
 
-				$('#id-prod').val(id);
+			$('#id-prod').val(id);
 
-				$('#codigo_producto').val(datos[0]);
+			$('#codigo_producto').val(datos[0]);
 
-				$('#descripcion').val(datos[1]);
+			$('#descripcion').val(datos[1]);
 
-				$('#precio_costo').val(datos[2]);
+			$('#precio_costo').val(datos[2]);
 
-				$('#categoria').val(datos[3]);
+			$('#categoria').val(datos[3]);
 
-				$('#tipo').val(datos[4]);
+			$('#tipo').val(datos[4]);
 
-				$('#registra-producto').modal({
+			$('#registra-producto').modal({
 
-					show:true,
+				show:true,
 
-					backdrop:'static'
+				backdrop:'static'
 
-				});
+			});
 
 			return false;
 
@@ -264,56 +264,56 @@ function reportePDF(){
 
 $(document).ready(function(){
 
-    
+	
 
-    var show = 1;
+	var show = 1;
 
-    
+	
 
-    $('.show').on('click', function(){
+	$('.show').on('click', function(){
 
-        
+		
 
-        if(show == 1){
+		if(show == 1){
 
-            $('.content-menu').addClass("content-menu2");
+			$('.content-menu').addClass("content-menu2");
 
-            show = 0;
+			show = 0;
 
-        }else{
+		}else{
 
-            $('.content-menu').removeClass("content-menu2");
+			$('.content-menu').removeClass("content-menu2");
 
-            show = 1;
+			show = 1;
 
-        }
+		}
 
-        
+		
 
-        
+		
 
-    })
+	})
 
-    
+	
 
 })
 
 $('.image-file-button').each(function() {
 
-      $(this).off('click').on('click', function() {
+	$(this).off('click').on('click', function() {
 
-           $(this).siblings('.image-file').trigger('click');
+		$(this).siblings('.image-file').trigger('click');
 
-      });
+	});
 
 });
 
 $('.image-file').each(function() {
 
-      $(this).change(function () {
+	$(this).change(function () {
 
-           $(this).siblings('.image-file-chosen').val(this.files[0].name);
+		$(this).siblings('.image-file-chosen').val(this.files[0].name);
 
-      });
+	});
 
 });

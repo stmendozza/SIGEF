@@ -4,9 +4,9 @@ include('../connections/config.php');
 
 function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+	return $nfecha;
 
 }
 $id = $_POST['id'];
@@ -28,15 +28,15 @@ $resultado = mysqli_query($conexion, $registro);
 
 echo '<table class="table table-striped table-condensed table-hover">
 
-        	<tr>
+<tr>
 
 
-                      <th width="50">Codigo</th>
-                      <th width="500">Descripcion Promo</th>
-                      <th width="200">F. de Registro</th>
-                      <th width="50">Opciones</th>
+<th width="50">Codigo</th>
+<th width="500">Descripcion Promo</th>
+<th width="200">F. de Registro</th>
+<th width="50">Opciones</th>
 
-            </tr>';
+</tr>';
 
 
 
@@ -46,12 +46,12 @@ if(!empty($resultado)){
 
 		echo '<tr>
 
-              <td>'.$array['cod_promo'].'</td>
-              <td>'.utf8_decode($array['descripcion_promo']).'</td>
-              <td>'.fechaNormal($array['fecha_registro_promo']).'</td>
-			  <td><a href="javascript:editarPromocion('.$array ['cod_promo'].');" class="fal fa-edit"></a> <a href="javascript:eliminarPromocion('.$array ['cod_promo'].');" class="fal fa-trash-alt icon3"></a></td>
+		<td>'.$array['cod_promo'].'</td>
+		<td>'.utf8_decode($array['descripcion_promo']).'</td>
+		<td>'.fechaNormal($array['fecha_registro_promo']).'</td>
+		<td><a href="javascript:editarPromocion('.$array ['cod_promo'].');" class="fal fa-edit"></a> <a href="javascript:eliminarPromocion('.$array ['cod_promo'].');" class="fal fa-trash-alt icon3"></a></td>
 
-			  </tr>';
+		</tr>';
 
 	}
 
@@ -59,9 +59,9 @@ if(!empty($resultado)){
 
 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+	<td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+	</tr>';
 
 }
 

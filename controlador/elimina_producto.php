@@ -1,16 +1,16 @@
  <?php
 
-include('../connections/config.php');
+ include('../connections/config.php');
 
-function fechaNormal($fecha){
+ function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+ 	$nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+ 	return $nfecha;
 
-}
+ }
 
-$id = $_POST['id'];
+ $id = $_POST['id'];
 
 
 
@@ -18,70 +18,70 @@ $id = $_POST['id'];
 
 
 
-$eliminar = ("DELETE FROM tb_productos WHERE cod_prod = '$id'");
+ $eliminar = ("DELETE FROM tb_productos WHERE cod_prod = '$id'");
 
-$resultado = mysqli_query($conexion, $eliminar);
+ $resultado = mysqli_query($conexion, $eliminar);
 
 //ACTUALIZAMOS LOS REGISTROS Y LOS OBTENEMOS
 
 
 
-$registro = ("SELECT * FROM tb_productos ORDER BY cod_prod ASC");
+ $registro = ("SELECT * FROM tb_productos ORDER BY cod_prod ASC");
 
-$resultado = mysqli_query($conexion, $registro);
+ $resultado = mysqli_query($conexion, $registro);
 
 //CREAMOS NUESTRA VISTA Y LA DEVOLVEMOS AL AJAX
 
 
 
-echo '<table class="table table-striped table-condensed table-hover" id="mitabla">
+ echo '<table class="table table-striped table-condensed table-hover" id="mitabla">
 
-        	<tr>
+ <tr>
 
-            	<th width="30">Codigo</th>
+ <th width="30">Codigo</th>
 
-                <th width="200">Nombre</th>
+ <th width="200">Nombre</th>
 
-                <th width="100">Precio Distribuidor</th>
+ <th width="100">Precio Distribuidor</th>
 
-                <th width="200">Fecha Registro</th>
+ <th width="200">Fecha Registro</th>
 
-                <th width="50">Opciones</th>
+ <th width="50">Opciones</th>
 
-            </tr>';
+ </tr>';
 
 
 
-if(!empty($resultado)){
+ if(!empty($resultado)){
 
-	while($array = mysqli_fetch_array($resultado)){
+ 	while($array = mysqli_fetch_array($resultado)){
 
-		echo '<tr>
+ 		echo '<tr>
 
-				<td>'.$array['cod_prod'].'</td>
+ 		<td>'.$array['cod_prod'].'</td>
 
-				<td>'.$array['descripcion'].'</td>
+ 		<td>'.$array['descripcion'].'</td>
 
-				<td>S/. '.$array['precio_costo'].'</td>
+ 		<td>S/. '.$array['precio_costo'].'</td>
 
-				<td>'.fechaNormal($array['fecha_registro_prod']).'</td>
+ 		<td>'.fechaNormal($array['fecha_registro_prod']).'</td>
 
-				<td><a href="javascript:editarProducto('.$array['cod_prod'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarProducto('.$array['cod_prod'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
+ 		<td><a href="javascript:editarProducto('.$array['cod_prod'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarProducto('.$array['cod_prod'].');" class="glyphicon glyphicon-remove-circle icon3"></a></td>
 
-				</tr>';
+ 		</tr>';
 
-	}
+ 	}
 
-}else{
+ }else{
 
-	echo '<tr>
+ 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+ 	<td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+ 	</tr>';
 
-}
+ }
 
-echo '</table>';
+ echo '</table>';
 
-?>
+ ?>

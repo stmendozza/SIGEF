@@ -2,23 +2,23 @@
 
 session_start();
 
-	 include "../connections/config.php";
+include "../connections/config.php";
 
 	// si el usuario esta conectado muestra el sitio de chat si no lo redirige al index para que se logee o se registre
 
-	 	if (isset($_SESSION['usuario']))
+if (isset($_SESSION['usuario']))
 
-	 	{
+{
 
-			$usuario=$_POST['usuario'];
+	$usuario=$_POST['usuario'];
 
-			$nombre=$_POST['nombre'];
+	$nombre=$_POST['nombre'];
 
-			$celular=$_POST['celular'];
+	$celular=$_POST['celular'];
 
-			$direccion=$_POST['direccion'];
+	$direccion=$_POST['direccion'];
 
-			$correo=$_POST['correo'];
+	$correo=$_POST['correo'];
 
 
 
@@ -38,15 +38,15 @@ session_start();
 
 		$resultado = $conexion->query( $sql );
 
-			if( $conexion->affected_rows > 0 )
+		if( $conexion->affected_rows > 0 )
 
-				{	session_destroy();
+			{	session_destroy();
 
-					session_start();
+				session_start();
 
-					
-					$_SESSION['usuario'] = $usuario;
-					$_SESSION['nom_usu'] = $nombre;
+				
+				$_SESSION['usuario'] = $usuario;
+				$_SESSION['nom_usu'] = $nombre;
 					// $_SESSION['cod_usuario'] = $cod_usuario;
 					echo "<script>location.href='../controlador/usuario.php'</script>";//me retorna a la pantalla inicial
 
@@ -54,7 +54,7 @@ session_start();
 
 				}else{
 
-						echo "<script> alert ('Error: no se han actualizado los datos de la tabla en la base de datos.') </script>";
+					echo "<script> alert ('Error: no se han actualizado los datos de la tabla en la base de datos.') </script>";
 
 						echo "<script>location.href='../controlador/usuario.php'</script>";//me retorna a la pantalla inicial
 
@@ -62,12 +62,12 @@ session_start();
 
 //echo "<script>location.href='usuario.php'</script>";//me retorna a la pantalla inicial
 
-		}else{
+				}else{
 
-			
+					
 
-		 	header("location: ../index.php");
+					header("location: ../index.php");
 
-		} 
+				} 
 
-?>
+				?>

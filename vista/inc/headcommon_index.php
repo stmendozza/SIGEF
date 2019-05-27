@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../SIGEF/vista/css/bootstrap.min.css">
 	<!-- <link href="../SIGEF/vista/css/jquery.dataTables.min.css" rel="stylesheet"> -->
 	<link rel="stylesheet"  href="../SIGEF/vista/css/estilos.css">   
-    <link href="../SIGEF/vista/dist/css/sb-admin-2.css" rel="stylesheet">
+	<link href="../SIGEF/vista/dist/css/sb-admin-2.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../SIGEF/vista/alertifyjs/alertify.js"></script>
-    <script src="../SIGEF/vista/js/menu.js" ></script>  
+	<script src="../SIGEF/vista/js/menu.js" ></script>  

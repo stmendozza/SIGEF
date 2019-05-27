@@ -24,15 +24,15 @@ $valores2 = mysqli_fetch_array($resultado);
 
 $datos = array(
 
-				0 => $valores2['cod_producto'], 
+	0 => $valores2['cod_producto'], 
 
-				1 => $valores2['descripcion'], 
+	1 => $valores2['descripcion'], 
 
-				2 => $valores2['precio_compra'], 
+	2 => $valores2['precio_compra'], 
 
-				3 => $valores2['fecha_registro'],
+	3 => $valores2['fecha_registro'],
 
-				);
+);
 
 echo json_encode($datos);
 

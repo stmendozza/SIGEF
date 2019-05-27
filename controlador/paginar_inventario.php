@@ -1,6 +1,6 @@
  <?php
 
-  // require_once '../connections/config.php';
+  require_once 'funciones.php';
 
   function fechaNormal($fecha){
 
@@ -30,10 +30,9 @@
                   </tr>
                   </thead>";
               $i=1;
-              while ($row=mysqli_fetch_row($resultado)){
-        if ($row[6]=='disponible' ) {
-            $color="badge-success";
-        }
+  while ($row=mysqli_fetch_row($resultado)){
+        $color="badge-success";
+        
         if ($row[6]=='agotandose') {
             $color='badge-secondary';
         }
@@ -42,6 +41,47 @@
         }
         if ($row[6]=='agotado') {
         $color='badge-dark';
+        }
+      // function calculaTiempo($fecha_ini,$fecha_fin){
+
+      // //Indice 0= años
+      // //Indice 1= meses
+      // //Indice 2= dias
+      // //Indice 11= total en dias
+      // $datetime1 = date_create($fecha_ini);
+      //   $datetime2 = date_create($fecha_fin);
+      //   $interval = date_diff($datetime1, $datetime2);
+        
+      //   $tiempo = array();
+
+      //   foreach ($interval as $valor) {
+      //     $tiempo []= $valor;
+      //   }
+    
+      //     // if ($tiempo[1]<3) {
+      //     // $fondo='red'; 
+      //     // }
+      //     // if ($tiempo[1]>=3 and $tiempo[1]<=6) {
+      //     // $fondo='orange'; 
+      //     // }
+      //     // if ($tiempo[1]<3) {
+      //     // $fondo='green';
+      //     // }
+
+      //     return $tiempo;
+      // }
+        // // $fecha_ini=fechaNormal($row[10]);
+        // $fecha_fin=date('d/m/Y'); 
+
+        $tiempo= calculaTiempo($row[10],date('Y/m/d'));
+        if ($tiempo[1]<3) {
+           $fondo='#C82333';
+        }
+        if ($tiempo[1]>=3 and $tiempo[1]<6) {
+          $fondo='orange'; 
+        }
+        if ($tiempo[1]>=6) {
+          $fondo='green';
         }
                 echo '
                     <tr>
@@ -55,7 +95,7 @@
                     </td>   
                      
                     <td>'.$row[9].'</td>
-                    <td  style="background-color:#C9302C; color:white;"><center>'.fechaNormal($row[10]).'</center></td>                  
+                    <td  style="background-color:'.$fondo.'; color:white;"><center>'.fechaNormal($row[10]).'</center></td>                  
                   </tr>';
 
               }

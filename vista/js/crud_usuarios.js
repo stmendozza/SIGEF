@@ -40,25 +40,25 @@ function agregaRegistroUsuario(){
 
 			if ($('#pro').val() == 'Registro'){
 
-			$('#formulario')[0].reset();
+				$('#formulario')[0].reset();
 
-			$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			window.location="usuarios.php";
+				window.location="usuarios.php";
 
-			return false;
+				return false;
 
 			}else{
 
-			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
+				$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			window.location="usuarios.php";
+				window.location="usuarios.php";
 
-			return false;
+				return false;
 
 			}
 
@@ -69,7 +69,7 @@ function agregaRegistroUsuario(){
 	return false;
 
 }
- 
+
 
 
 function eliminarUsuario(id){
@@ -82,23 +82,23 @@ function eliminarUsuario(id){
 
 		$.ajax({
 
-		type:'POST',
+			type:'POST',
 
-		url:url,
+			url:url,
 
-		data:'id='+id,
+			data:'id='+id,
 
-		success: function(registro){
+			success: function(registro){
 
-			$('#agrega-registros').html(registro);
+				$('#agrega-registros').html(registro);
 
-			return false;
+				return false;
 
-		}
+			}
 
-	});
+		});
 
-	return false;
+		return false;
 
 	}else{
 
@@ -116,7 +116,7 @@ function editarUsuario(id){
 
 	var url = 'edita_usuario.php';
 
-		$.ajax({
+	$.ajax({
 
 		type:'POST',
 
@@ -126,33 +126,33 @@ function editarUsuario(id){
 
 		success: function(valores){
 
-				var datos = eval(valores);
+			var datos = eval(valores);
 
-				$('#reg').hide();
+			$('#reg').hide();
 
-				$('#edi').show();
+			$('#edi').show();
 
-				$('#pro').val('Edicion');
+			$('#pro').val('Edicion');
 
-				$('#id-prod').val(id);
+			$('#id-prod').val(id);
 
-				$('#usuario').val(datos[0]);
+			$('#usuario').val(datos[0]);
 
-				$('#nom_usu').val(datos[1]);
+			$('#nom_usu').val(datos[1]);
 
-				$('#telefono_usu').val(datos[2]);
-				
-				$('#direccion_usu').val(datos[3]);
-				
-				$('#email').val(datos[4]);
-				
-				$('#registra-usuario').modal({
+			$('#telefono_usu').val(datos[2]);
+			
+			$('#direccion_usu').val(datos[3]);
+			
+			$('#email').val(datos[4]);
+			
+			$('#registra-usuario').modal({
 
-					show:true,
+				show:true,
 
-					backdrop:'static'
+				backdrop:'static'
 
-				});
+			});
 
 			return false;
 
@@ -165,36 +165,36 @@ function editarUsuario(id){
 }
 $(document).ready(function(){
 
-    
+	
 
-    var show = 1;
+	var show = 1;
 
-    
+	
 
-    $('.show').on('click', function(){
+	$('.show').on('click', function(){
 
-        
+		
 
-        if(show == 1){
+		if(show == 1){
 
-            $('.content-menu').addClass("content-menu2");
+			$('.content-menu').addClass("content-menu2");
 
-            show = 0;
+			show = 0;
 
-        }else{
+		}else{
 
-            $('.content-menu').removeClass("content-menu2");
+			$('.content-menu').removeClass("content-menu2");
 
-            show = 1;
+			show = 1;
 
-        }
+		}
 
-        
+		
 
-        
+		
 
-    })
+	})
 
-    
+	
 
 })

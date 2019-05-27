@@ -4,9 +4,9 @@ include('../connections/config.php');
 
 function fechaNormal($fecha){
 
-		$nfecha = date('d/m/Y',strtotime($fecha));
+	$nfecha = date('d/m/Y',strtotime($fecha));
 
-		return $nfecha;
+	return $nfecha;
 
 }
 
@@ -28,18 +28,18 @@ $resultado = mysqli_query($conexion, $registro);
 
 echo '<table class="table table-striped table-condensed table-hover">
 
-        	<tr>
+<tr>
 
-                  <th width="20">Codigo</th>
-                  <th width="100">Usuario</th>
-                  <th width="200">Nombre</th>
-                  <th width="100">telefono</th>
-                  <th width="300">Direccion</th>
-                  <th width="300">Email</th>
-                  <th width="200">Fecha de registro</th>
-                  <th width="10">Opciones</th>
+<th width="20">Codigo</th>
+<th width="100">Usuario</th>
+<th width="200">Nombre</th>
+<th width="100">telefono</th>
+<th width="300">Direccion</th>
+<th width="300">Email</th>
+<th width="200">Fecha de registro</th>
+<th width="10">Opciones</th>
 
-            </tr>';
+</tr>';
 
 if(!empty($resultado)){
 
@@ -47,16 +47,16 @@ if(!empty($resultado)){
 
 		echo '<tr>
 
-				<td>'.$registro2 ['cod_prove'].'</td>
-				<td>'.$registro2 ['usuario'].'</td>
-				<td>'.$registro2 ['nom_usu'].'</td>
-				<td>'.$registro2 ['telefono_usu'].'</td>
-				<td>'.$registro2 ['direccion_usu'].'</td>
-				<td>'.$registro2 ['email'].'</td>
-                <td>'.utf8_decode($registro2 ['fecha_registro_usu']).'</td>
-				<td><a href="javascript:editarProducto('.$registro2 ['cod_prove'].');" class="fal fa-edit"></a> <a href="javascript:eliminarProducto('.$registro2 ['cod_prove'].');" class="fal fa-trash-alt icon3"></a></td>
+		<td>'.$registro2 ['cod_prove'].'</td>
+		<td>'.$registro2 ['usuario'].'</td>
+		<td>'.$registro2 ['nom_usu'].'</td>
+		<td>'.$registro2 ['telefono_usu'].'</td>
+		<td>'.$registro2 ['direccion_usu'].'</td>
+		<td>'.$registro2 ['email'].'</td>
+		<td>'.utf8_decode($registro2 ['fecha_registro_usu']).'</td>
+		<td><a href="javascript:editarProducto('.$registro2 ['cod_prove'].');" class="fal fa-edit"></a> <a href="javascript:eliminarProducto('.$registro2 ['cod_prove'].');" class="fal fa-trash-alt icon3"></a></td>
 
-				</tr>';
+		</tr>';
 
 	}
 
@@ -64,9 +64,9 @@ if(!empty($resultado)){
 
 	echo '<tr>
 
-				<td colspan="6">No se encontraron resultados</td>
+	<td colspan="6">No se encontraron resultados</td>
 
-			</tr>';
+	</tr>';
 
 }
 
