@@ -25,11 +25,11 @@
                 echo "
                   
                     <tr>
-                      <td>".$row[0]."</td>
-                      <td>".utf8_decode($row[1])."</td>
-                      <td>S/. ".$row[2]."</td>
-                      <td align='center' style='font-size:18px;''><span class='badge badge-danger'>".$row[5]."</span></td>
-                      <td>".fechaNormal($row[9])."</td>
+                      <td>".$row[1]."</td>
+                      <td>".utf8_decode($row[2])."</td>
+                      <td>S/. ".$row[3]."</td>
+                      <td align='center' style='font-size:18px;''><span class='badge badge-danger'>".$row[6]."</span></td>
+                      <td>".fechaNormal($row[10])."</td>
                     </tr>
                  ";
               }

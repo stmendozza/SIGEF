@@ -9,6 +9,7 @@
 <head>
 	<?php include ("../vista/inc/headcommon.php");?>
 	<title>SIGEF | Ingresos</title>	
+    
     <script src="../vista/js/crud_ingresos.js"></script>
     <link rel="stylesheet" href="../vista/icon/style.css">
     <script src="../vista/js/bootstrap.min.js"></script>

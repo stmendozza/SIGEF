@@ -88,13 +88,13 @@
 	<div class="container">
 		<div class="row">
 
-				<div class="col-xs-12 col-sm-4 col-sd-4 col-lg-4  "></div>
+				<div class="col-1 col-sm-2 col-sd-4 col-lg-4  "></div>
 
 				
 
-				<div class="col-xs-12 col-sm-4 col-sd-4 col-lg-4  ">
+				<div class="col col-sm-8 col-sd-4 col-lg-4  ">
 
-				<div class="col-xs-12 col-sm-12">
+				<div class="col col-sm-12">
 
 					<br><br>
 
@@ -119,7 +119,7 @@
 
 									<span class="input-group-addon"><i class="fal fa-user"></i></span>
 
-									<input id="usuario" type="text" class="form-control" name="usuario" value="" placeholder="usuario o email" required>                                  
+									<input id="usuario" type="text" class="form-control" name="usuario" value="" placeholder="usuario o email= stmendozza" required>                                  
 
 								</div>
 
@@ -129,7 +129,7 @@
 
 									<span class="input-group-addon"><i class="fal fa-lock"></i></span>
 
-									<input id="password" type="password" class="form-control" name="contrasena" placeholder="contraseña" required>
+									<input id="password" type="password" class="form-control" name="contrasena" placeholder="contraseña= rojo" required>
 
 								</div>
 
@@ -139,7 +139,7 @@
 
 									<div class="col-sm-12 controls">
 
-										<button id="btn-login" type="submit" class="col-xs-12 btn btn-success">Iniciar Sesi&oacute;n</a>
+										<button id="btn-login" type="submit" class="col-12 btn btn-success">Iniciar Sesi&oacute;n</a>
 
 									</div>
 
@@ -164,30 +164,30 @@
 						</form>
 
 						<?php echo resultblock($errors); ?>	
-<center>
-					<div class="form-group">
-	                	<label for="Descripcion" class="col-sm-12 control-label">Usuario= stmendozza</label>
-	                </div>
-	              
-		            <div class="form-group">
-		                <label for="cantidad" class="col-sm-12 control-label">Contraseña = azul</label>
-	    	        </div>    
+					<center>
+					<!-- 					<div class="form-group">
+						                	<label for="Descripcion" class="col-sm-12 control-label">Usuario= stmendozza</label>
+						                </div>
+						              
+							            <div class="form-group">
+							                <label for="cantidad" class="col-sm-12 control-label">Contraseña = rojo</label>
+						    	        </div>   -->  
+					<!-- 
+							            <div class="form-group">
+							                <label for="cantidad" class="col-sm-12 control-label" style="text-align: justify;">para correr el programa utilizo XAMPP, En caso de Registrarse o querer reestablecer la contraseña, hay que configurar y activar mercury para recibir un correo de activacion del usuario.</label>
+						    	        </div>   
 
-		            <div class="form-group">
-		                <label for="cantidad" class="col-sm-12 control-label" style="text-align: justify;">para correr el programa utilizo XAMPP, En caso de Registrarse o querer reestablecer la contraseña, hay que configurar y activar mercury para recibir un correo de activacion del usuario.</label>
-	    	        </div>   
+							            <div class="form-group">
+							                <span class="fa fa-exclamation-circle" style="color: red; font-size: 7rem;"></span>
+						    	        </div>   
 
-		            <div class="form-group">
-		                <span class="fa fa-exclamation-circle" style="color: red; font-size: 7rem;"></span>
-	    	        </div>   
-
-		            <div class="form-group">
-		                <label for="cantidad" class="col-sm-12 control-label" style="color:red; text-align: justify;">Por favor comentarme en que  se puede mejorar. <br> En el momento estoy trabajando en eliminar codigo basura.</label>
-	    	        </div>   		
-</center>
+							            <div class="form-group">
+							                <label for="cantidad" class="col-sm-12 control-label" style="color:red; text-align: justify;">Por favor comentarme en que  se puede mejorar. <br> En el momento estoy trabajando en eliminar codigo basura.</label>
+						    	        </div>   --> 		
+					</center>
 				</div>	
 
-				<div class="col-xs-12 col-sm-4 col-sd-4 col-lg-4  ">
+				<div class="col-1 col-sm-2 col-sd-4 col-lg-4  ">
 	              	
 
 				</div>

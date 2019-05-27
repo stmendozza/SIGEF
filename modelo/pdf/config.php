@@ -1,6 +1,6 @@
 <?php 
 /*conexion a base de datos*/
-$conexion=  new mysqli ('localhost', 'root', '' ,'bd_sigef');
+$conexion=  new mysqli ('localhost', 'root', '' ,'bd_sigefp');
 if ($conexion->connect_error) {
 	die('Error en la conexion' . $conexion->connect_error);
 }

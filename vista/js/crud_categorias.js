@@ -1,66 +1,4 @@
-$(document).ready(pagination(1));
-
 $(function(){
-
-	$('#bd-desde').on('change', function(){
-
-		var desde = $('#bd-desde').val();
-
-		var hasta = $('#bd-hasta').val();
-
-		var url = 'busca_categoria_fecha.php';
-
-		$.ajax({
-
-		type:'POST',
-
-		url:url,
-
-		data:'desde='+desde+'&hasta='+hasta,
-
-		success: function(datos){
-
-			$('#agrega-registros-categ').html(datos);
-
-		}
-
-	});
-
-	return false;
-
-	}); 
-
-	
-
-	$('#bd-hasta').on('change', function(){
-
-		var desde = $('#bd-desde').val();
-
-		var hasta = $('#bd-hasta').val();
-
-		var url = 'busca_categoria_fecha.php';
-
-		$.ajax({
-
-		type:'POST',
-
-		url:url,
-
-		data:'desde='+desde+'&hasta='+hasta,
-
-		success: function(datos){
-
-			$('#agrega-registros-categ').html(datos);
-
-		}
-
-	});
-
-	return false;
-
-	});
-
-	
 
 	$('#nueva-categoria').on('click',function(){
 
@@ -110,6 +48,8 @@ function agregaRegistroCategoria(){
 
 			$('#agrega-registros-categ').html(registro);
 
+			window.location.href = "../controlador/categorias.php";
+
 			return false;
 
 			}else{
@@ -117,6 +57,8 @@ function agregaRegistroCategoria(){
 			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
 
 			$('#agrega-registros-categ').html(registro);
+
+			window.location.href = "../controlador/categorias.php";
 
 			return false;
 
@@ -151,6 +93,8 @@ function eliminarCategoria(id){
 		success: function(registro){
 
 			$('#agrega-registros-categ').html(registro);
+			
+			window.location.href = "../controlador/categorias.php";
 
 			return false;
 
@@ -264,23 +208,3 @@ $(document).ready(function(){
     
 
 })
-
-$('.image-file-button').each(function() {
-
-      $(this).off('click').on('click', function() {
-
-           $(this).siblings('.image-file').trigger('click');
-
-      });
-
-});
-
-$('.image-file').each(function() {
-
-      $(this).change(function () {
-
-           $(this).siblings('.image-file-chosen').val(this.files[0].name);
-
-      });
-
-});

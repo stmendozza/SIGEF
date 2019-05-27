@@ -10,7 +10,7 @@
   <?php include ("../vista/inc/headcommon.php");?>
   <title>SIGEF | Novedades</title>  
     <link rel="stylesheet" href="../vista/icon/style.css">
-    <!-- <script src="../vista/js/crud_novedades.js"></script> -->
+    <script src="../vista/js/crud_novedades.js"></script>
     <script src="../vista/js/bootstrap.min.js"></script>
 </head>
 <body> 

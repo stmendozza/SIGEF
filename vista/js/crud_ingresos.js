@@ -1,5 +1,3 @@
-$(document).ready(pagination(1));
-
 $(function(){
 
 	$('#bd-desde').on('change', function(){

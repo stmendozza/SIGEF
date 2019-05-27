@@ -20,6 +20,8 @@
 
                       <th width='10'>Cantidad</th>
 
+                      <th width='10'>C. Min</th>
+
                       <th width='200'>Fecha Registro</th>
 
                       
@@ -30,15 +32,17 @@
               {
                 echo "
                     <tr>
-                      <td>".$row[0]."</td>
+                      <td>".$row[1]."</td>
 
-                      <td>".utf8_decode($row[1])."</td>
+                      <td>".utf8_decode($row[2])."</td>
 
-                      <td>S/. ".$row[2]."</td>
+                      <td>S/. ".$row[3]."</td>
 
-                      <td align='center' style='font-size:18px;''><span class='badge badge-dark'>".$row[4]."</span></td>
+                      <td align='center' style='font-size:18px;''><span class='badge badge-danger'>".$row[5]."</span></td>
 
-                      <td>".fechaNormal($row[9])."</td>
+                      <td align='center' style='font-size:18px;''><span class='badge badge-dark'>".$row[7]."</span></td>
+
+                      <td>".fechaNormal($row[10])."</td>
                   </tr>";
 
               }

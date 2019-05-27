@@ -11,8 +11,8 @@
 <head>
 	<?php include ("../vista/inc/headcommon.php");?>
 	<title>SIGEF | Ganancias</title>	
-	  <link rel="stylesheet" href="../vista/icon/style.css">
-    <script src="../vista/js/myjava.js"></script>
+	<link rel="stylesheet" href="../vista/icon/style.css">
+    <script src="../vista/js/menuds.js"></script>
     <script src="../vista/js/bootstrap.min.js"></script>
     <link href="../vista/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
@@ -50,6 +50,5 @@
 	}
 				include "../vista/inc/footer.php";
 	?>
-	    <script src="../vista/js/myjava.js"></script>
 </body>
 </html>

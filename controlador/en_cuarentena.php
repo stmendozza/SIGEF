@@ -12,6 +12,7 @@
 	<?php include ("../vista/inc/headcommon.php");?>
 	<title>SIGEF | En Cuarentena</title>	
 	<link rel="stylesheet" href="../vista/icon/style.css">
+    <script src="../vista/js/menuds.js"></script>
     <script src="../vista/js/bootstrap.min.js"></script>
     <link href="../vista/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
@@ -23,7 +24,7 @@
                 <div class="row">
                     <ol class="col breadcrumb">
                         <li><a href="../index.php" class="icon7"><i class="fa fa-home"></i> Inicio /</a></li>
-                        <li class="active">En Cuarenten</li>
+                        <li class="active">En Cuarentena</li>
                     </ol>
                      <a href="../modelo/pdf/reporte_en_cuarentena.php" target="_black"><button type="button" class="col-10 col-sm-2 btn btn-danger" ><span class="fa fa-print"></span> Imprimir Listado</button></a>
                             <button type="button"   class="col-2 col-sm-1 btn btn-link" ><span class="fa fa-question"></span></button>

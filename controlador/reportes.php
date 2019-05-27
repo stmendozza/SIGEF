@@ -23,8 +23,7 @@
 	<?php include ("../vista/inc/headcommon.php");?>
 	<title>SIGEF | Reportes</title>
 	<link rel="stylesheet" href="../vista/icon/style.css">
-	<script src="../vista/js/jqueryb.js"></script>
-	<script src="../vista/js/sr_inventario.js"></script>  
+    <script src="../vista/js/menuds.js"></script>
 	<script src="../vista/js/bootstrap.min.js"></script>
     <link href="../vista/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>

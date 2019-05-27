@@ -1,5 +1,3 @@
-$(document).ready(pagination(1));
-
 $(function(){
 
 	$('#bd-desde').on('change', function(){
@@ -256,38 +254,6 @@ function reportePDF(){
 
 }
 
-
-
-function pagination(partida){
-
-	var url = 'paginar_promociones.php';
-
-	$.ajax({
-
-		type:'POST', 
-
-		url:url,
-
-		data:'partida='+partida,
-
-		success:function(data){
-
-			var array = eval(data);
-
-			$('#agrega-registros-promo').html(array[0]);
-
-			$('#pagination-promo').html(array[1]);
-
-		}
-
-	});
-
-	return false;
-
-}
-
-
-
 $(document).ready(function(){
 
     
@@ -323,23 +289,3 @@ $(document).ready(function(){
     
 
 })
-
-$('.image-file-button').each(function() {
-
-      $(this).off('click').on('click', function() {
-
-           $(this).siblings('.image-file').trigger('click');
-
-      });
-
-});
-
-$('.image-file').each(function() {
-
-      $(this).change(function () {
-
-           $(this).siblings('.image-file-chosen').val(this.files[0].name);
-
-      });
-
-});

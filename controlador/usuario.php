@@ -15,9 +15,7 @@
 	<?php include ("../vista/inc/headcommon.php");?>
 	<title>SIGEF | Usuario</title>
 	<link rel="stylesheet" href="../vista/icon/style.css">
-	    <script src="../vista/js/crud_novedades.js"></script>
-
-		<!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
+    <script src="../vista/js/menuds.js"></script>
 	<script src="../vista/js/bootstrap.min.js"></script>
     <link href="../vista/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
@@ -237,19 +235,19 @@
 		 }
 			include "../vista/inc/footer.php";
  		?>
-	<script type="text/javascript">
+	// <script type="text/javascript">
 
-		$(document).ready(function(){
+	// 	$(document).ready(function(){
 			
-			$('#actualizar_datos').click(function(){
-				alertify.confirm('Eliminar datos', '¿Seguro que deseas eliminar?', function(){ alertify.success('Ok') }
-    //             , function(){ alertify.error('Cancel')});
-				//alertify.alert("te hace falta llenar mas campos, por favor");
-				//alertify.error("fallo el servidor :(");
-				//alertify.success("este es un mensaje de exito ");
-			});
-		})
-	</script>
+	// 		$('#actualizar_datos').click(function(){
+	// 			alertify.confirm('Eliminar datos', '¿Seguro que deseas eliminar?', function(){ alertify.success('Ok') }
+ //    //             , function(){ alertify.error('Cancel')});
+	// 			//alertify.alert("te hace falta llenar mas campos, por favor");
+	// 			//alertify.error("fallo el servidor :(");
+	// 			//alertify.success("este es un mensaje de exito ");
+	// 		});
+	// 	})
+	// </script>
 </body>
 
 </html>

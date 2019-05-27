@@ -1,5 +1,3 @@
-$(document).ready(pagination(1));
-
 $(function(){
 
 	$('#bd-desde').on('change', function(){
@@ -263,38 +261,6 @@ function reportePDF(){
 	window.open('reportesproductosq.php?desde='+desde+'&hasta='+hasta);
 
 }
-
-
-
-function pagination(partida){
-
-	var url = 'paginar_productos.php';
-
-	$.ajax({
-
-		type:'POST', 
-
-		url:url,
-
-		data:'partida='+partida,
-
-		success:function(data){
-
-			var array = eval(data);
-
-			$('#agrega-registros').html(array[0]);
-
-			$('#pagination').html(array[1]);
-
-		}
-
-	});
-
-	return false;
-
-}
-
-
 
 $(document).ready(function(){
 

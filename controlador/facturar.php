@@ -29,9 +29,7 @@
     <?php include ("../vista/inc/scripts.php"); ?>    
     <title>SIGEF | Facturacion</title>
     <link rel="stylesheet" href="../vista/icon/style.css">
-    <script src="../vista/js/crud_clientes.js"></script>  
-
-    <script src="../vista/js/crud_novedades.js"></script>
+    <script src="../vista/js/crud_clientes.js"></script>
     <script src="../vista/js/bootstrap.min.js"></script>  
     <link href="../vista/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
@@ -65,17 +63,22 @@
                        <!-- <button type="button" class="col-xs-5 col-sm-2 btn btn-success" data-toggle="modal" data-target="#buscar_producto"><span class="fa fa-search"></span> Buscar Producto </button> -->
                 <div style="margin:5px; padding:5px 5px 20px 5px; " class="container-fluid card">
                     <div class="container">
-                        <form action="<?php $_SERVER['PHP_SELF'];?>" method="_POST" name="form_new_cliente_venta" id="form_new_cliente_venta" class="datos">
-                        <input type="hidden" name="action" value="add_Cliente">
-                        <input type="hidden" id="idcliente" name="idcliente" value="" required>
+                        <form>
+<!--                         <input type="hidden" name="action" value="add_Cliente">
+                        <input type="hidden" id="idcliente" name="idcliente" value="" required> -->
                         
                         <div class="row">
                             <label class="col-4">Codigo</label>
                             <label class="col">Nombre</label>                          
                         </div>
                         <div class="row">
-                            <input class="form-control col radius" type="text" name="cod_clie" id="cod_clie">
-                            <input class="form-control col radius" type="text" name="nom_clie" id="nom_clie" disabled value="<? echo $registro2['cod_clie']; ?>">
+
+                            <!-- <fieldset> -->
+                                <input class="form-control col radius" type="text" name="cod_clie" id="cod_clie" value="" class="text ui-widget-content ui-corner-all" ><span id="resultado"></span>
+                                <input class="form-control col radius" type="text" name="nom_clie" id="nom_clie" value="" readonly>
+                                <!-- <input type="submit" tabindex="-1" style="position:absolute; top:-1000px;"> -->
+                            <!-- </fieldset> -->
+                            
                             <button type="button" class="col btn btn-primary" id="nuevo-cliente"><span class="fal fa-plus"></span> Nuevo Cliente </button>  
                         </div>
                         </form>
@@ -126,7 +129,7 @@
                                 <td class="text_right"><center><strong>$ </strong>  1020012</center></td>
                                 <td class="">
                                     <center>
-                                        <a class="link_delete" href="#" onclick="event.preventDefault(); del_product_detalle1(1);"><i class="fal fa-trash-alt"></i></a>
+                                        <a class="link_delete" href="#" onclick="event.preventDefault(); del_product_detalle1(1);"><i class="fal fa-trash-alt icon2"></i></a>
                                     </center>
                                 </td>
                             </tr>
@@ -144,7 +147,7 @@
                                 <td><label  style="visibility:hidden">Acetaminofen</label></td>
                                 <td class="">
                                     <center>
-                                        <a style="visibility:hidden" class="link_delete" href="#" onclick="event.preventDefault(); del_product_detalle1(1);"><i class="fal fa-trash-alt"></i></a>
+                                        <a style="visibility:hidden" class="link_delete" href="#" onclick="event.preventDefault(); del_product_detalle1(1);"><i style="color:red;" class="fal fa-trash-alt "></i></a>
                                     </center>
                                 </td>
                             </tr>
@@ -192,22 +195,22 @@
 
                 <div class="row datos_venta">
                         <div class="col-2">
-                         <h4 style="padding: 5px;"><strong>Datos de la Venta</strong></h4>                            
+                         <!-- <h4 style="padding: 5px;"><strong>Datos de la Venta</strong></h4>   -->                          
                         </div>
                 </div>   
                 <div style="margin:5px; padding:5px; " class="container-fluid card">
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <label>Vendedor</label>
-                                <p><i class="far fa-user icon10"></i>  Cristhian Mendoza</p>
+                                <!-- <label>Vendedor</label>
+                                <p><i class="far fa-user icon10"></i>  Cristhian Mendoza</p> -->
                             </div>
                             <div class="col">
                                 <label>Acciones</label>
                                 <div id="acciones_venta" class="row" >
-                                    <a href="#" class="btn_new btn_new_cliente"><button type="button" class="col btn btn-danger" ><i class="fal fa-ban"></i>Anular Factura</button></a> 
-                                    <a href="#" class="btn_new btn_new_cliente " id="btn_facturar_venta"><button type="button" class=" btn btn-primary col" data-toggle="modal" data-target="#nuevo_cliente"><i class="fal fa-cash"></i>Facturar PDF</button></a>
-                                    <a href="#" class="btn_new btn_new_cliente " id="btn_facturar_venta"><button type="button" class=" btn btn-success col" data-toggle="modal" data-target="#nuevo_cliente"><i class="fal fa-cash"></i>Facturar Tiquet</button></a>
+                                    <a href="#" class="btn_new btn_new_cliente"><button type="button" class="col-2 btn btn-danger" ><i class="fal fa-ban"></i>Anular</button></a> 
+                                    <a href="#" class="btn_new btn_new_cliente " id="btn_facturar_venta"><button type="button" class=" btn btn-primary col" data-toggle="modal" data-target="#nuevo_cliente"><i class="fal fa-cash"></i>Facturar en PDF</button></a>
+                                    <a href="#" class="btn_new btn_new_cliente " id="btn_facturar_venta"><button type="button" class=" btn btn-success col" data-toggle="modal" data-target="#nuevo_cliente"><i class="fal fa-cash"></i>Facturar en Tiquet</button></a>
                 
                                 </div>
                             </div>
@@ -372,7 +375,25 @@
     }        include "../vista/inc/footer.php";
     ?>
     <script type="text/javascript">
+                $(document).ready(function(){
+                $("#cod_clie").focus();
+                $("#cod_clie").keyup(function(e){
+                var url="enter.php";
+                $.getJSON(url, { _num1 : $("cod_clie").val() }, function(clientes){
+                $.each(clientes, function(i,clientes){
+                $("#nom_clie").val(cliente.nombre);
 
+                if (cliente.resultado == "0") {
+                $("#resultado").css("color","red");
+                $("#resultado").text("codigo no disponible");
+                }else{
+                    $("#resultado").css("color","green");
+                    $("#resultado").text("codigo disponible");
+                }
+                });
+                });
+                });
+                });
     </script>
 </body>
 </html>

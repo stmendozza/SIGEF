@@ -13,8 +13,8 @@
 <head>
 	<?php include ("../vista/inc/headcommon.php");?>
 	<title>SIGEF | Roles</title>
-	<link rel="stylesheet" href="../vista/icon/style.css">
 	<script src="../vista/js/crud_roles.js"></script>
+	<link rel="stylesheet" href="../vista/icon/style.css">
 	<script src="../vista/js/bootstrap.min.js"></script>
 </head> 
 <body> 

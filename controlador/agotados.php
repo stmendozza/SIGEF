@@ -11,11 +11,9 @@
 <head>
 	<?php include ("../vista/inc/headcommon.php");?>
 	<title>SIGEF | Agotados</title>	
-	  <link rel="stylesheet" href="../vista/icon/style.css">
-    <!-- <script src="../vista/js/crud_agotados.js"></script> -->
-    <!-- <script src="../vista/js/crud_en_cuarentena.js"></script> -->
+	<link rel="stylesheet" href="../vista/icon/style.css">
+    <script src="../vista/js/menuds.js"></script>
     <script src="../vista/js/bootstrap.min.js"></script>
-    <!-- <script src="../vista/js/cambiarpestanna.js"></script>  -->
     <link href="../vista/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
 <body>

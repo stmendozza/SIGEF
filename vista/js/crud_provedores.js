@@ -1,5 +1,3 @@
-$(document).ready(pagination(1));
-
 $(function(){ 
 
 	$('#bd-desde').on('change', function(){
@@ -109,6 +107,8 @@ function agregaRegistroProvedor(){
 
 			$('#agrega-registros').html(registro);
 
+			window.location.href = "../controlador/proveedores.php";
+
 			return false;
 
 			}else{
@@ -116,6 +116,8 @@ function agregaRegistroProvedor(){
 			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
 
 			$('#agrega-registros').html(registro);
+
+			window.location.href = "../controlador/proveedores.php";
 
 			return false;
 

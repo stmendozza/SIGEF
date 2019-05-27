@@ -1,5 +1,3 @@
-$(document).ready(pagination(1));
-
 $(function(){
 
 	$('#bd-desde').on('change', function(){
@@ -138,6 +136,8 @@ function agregaRegistroTipo(){
 
 			$('#agrega-registros-tipo').html(registro);
 
+			window.location.href = "../controlador/tipos.php";
+
 			return false;
 
 			}else{
@@ -145,6 +145,8 @@ function agregaRegistroTipo(){
 			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
 
 			$('#agrega-registros-tipo').html(registro);
+
+			window.location.href = "../controlador/tipos.php";
 
 			return false;
 
@@ -294,23 +296,3 @@ $(document).ready(function(){
     
 
 })
-
-$('.image-file-button').each(function() {
-
-      $(this).off('click').on('click', function() {
-
-           $(this).siblings('.image-file').trigger('click');
-
-      });
-
-});
-
-$('.image-file').each(function() {
-
-      $(this).change(function () {
-
-           $(this).siblings('.image-file-chosen').val(this.files[0].name);
-
-      });
-
-});

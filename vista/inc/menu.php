@@ -42,7 +42,7 @@
                         <ul >
 
                             <li ><a href="usuario.php"><i class="icon izquierda fal fa-check-circle icon10" ></i><?php echo $_SESSION['usuario']; ?></a></li>
-                            <li ><a href="notoficaciones.php"><i class="icon izquierda fal fa-bell icon8" ></i>Notificaciones</a></li>
+                           <!-- <li ><a href="notoficaciones.php"><i class="icon izquierda fal fa-bell icon8" ></i>Notificaciones</a></li>-->
                             <li ><a href="usuarios.php"><i class="icon izquierda fal fa-users icon8" ></i>Usuarios</a></li>
                             <li ><a href="roles.php"><i class="icon izquierda fal fa-registered icon8" ></i>Roles</a></li>
                             <li ><a href="reportes.php"><i class="icon izquierda fal fa-file-pdf icon8" ></i>Reportes</a></li>

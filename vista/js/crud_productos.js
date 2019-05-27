@@ -1,5 +1,3 @@
-$(document).ready(pagination(1));
-
 $(function(){
 
 	$('#bd-desde').on('change', function(){
@@ -271,22 +269,22 @@ $(document).ready(function(){
 
 })
 
-$('.image-file-button').each(function() {
+// $('.image-file-button').each(function() {
 
-      $(this).off('click').on('click', function() {
+//       $(this).off('click').on('click', function() {
 
-           $(this).siblings('.image-file').trigger('click');
+//            $(this).siblings('.image-file').trigger('click');
 
-      });
+//       });
 
-});
+// });
 
-$('.image-file').each(function() {
+// $('.image-file').each(function() {
 
-      $(this).change(function () {
+//       $(this).change(function () {
 
-           $(this).siblings('.image-file-chosen').val(this.files[0].name);
+//            $(this).siblings('.image-file-chosen').val(this.files[0].name);
 
-      });
+//       });
 
-});
+// });
